@@ -106,13 +106,17 @@
 			&:before
 				content: ''
 				position: absolute
-				bottom: 10%
-				left: 0
-				background-color: red
+				bottom: 20%
+				left: -30%
+				background-color: #fff
 				width: 53%
-				transform: rotate(153deg)
+				transform: rotate(160deg)
 				height: 100%
-				border-radius: 83px 54%/30% 100%
+				border-radius: 30% 100%/6% 100%
+				z-index: -1
+				+tr(.8s)
+			&:hover:before
+				left: 80%
 
 		.link__more
 			display: flex
