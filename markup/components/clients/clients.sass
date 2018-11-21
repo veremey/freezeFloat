@@ -1,0 +1,91 @@
+
+.clients
+	@extend .service
+	&__bg
+		+coverdiv
+		background-color: #f5fafb
+		&_water
+			position: absolute
+			top: 70%
+			left: 80%
+		&_ice
+			position: absolute
+			top: 10%
+			left: -20%
+	&__content
+		width: 100%
+		max-width: 800px
+		margin: 0 auto
+	&__top
+		position: relative
+		// width: 100%
+		// max-width: 600px
+		// margin: 0 auto
+	&__nav
+		position: absolute
+		top: 50%
+		left: 0
+		right: 0
+		height: 50px
+		+try(-50%)
+		pointer-events: none
+		z-index: 10
+		.btn
+			pointer-events: auto
+	.slick-track
+		padding: 20px
+	&__pic
+		position: relative
+		text-align: center
+		opacity: 1
+		+tr(.3s)
+		+scale(.7)
+
+		&.slick-current
+			+scale(1)
+			img
+				box-shadow: 0 0 20px rgba(0, 0, 0, .7)
+		&.is-hidden
+			opacity: 0
+			+tr(.2s)
+	&__img
+		// +vcenter
+		width: 200px
+		height: 200px
+		border-radius: 100%
+	&__text
+		display: none
+		opacity: 0
+		+tr(.6s)
+		&.slick-current
+			display: block
+			opacity: 1
+
+	.btn
+		position: absolute
+		top: 50%
+		+try(-50%)
+		padding: 16px
+		background-color: $n
+		&:hover
+			background-color: #fff
+		&:active
+			.leftArrow
+				transform: translateX(-10px) scale(-1)
+			.rightArrow
+				transform: translateX(10px)
+		&-prev
+			left: 0
+
+		&-next
+			right: 0
+	.leftArrow,
+	.rightArrow
+		display: inline-block
+		vertical-align: middle
+		width: 18px
+		fill: #000
+		+tr(.4s)
+	.leftArrow
+		+scale(-1)
+

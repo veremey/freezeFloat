@@ -1,0 +1,123 @@
+.service
+	min-height: 100vh
+	&__bg
+		+coverdiv
+		background-color: #e3f3f6
+	&__header
+		margin-bottom: 80px
+		.desc
+			display: inline-block
+			width: 100%
+			max-width: 320px
+	&__list
+		font-size: 0
+		list-style-type: none
+		padding: 0
+		margin: 0 0 -30px
+		text-align: center
+	&__item
+		position: relative
+		display: inline-block
+		vertical-align: top
+		height: 432px
+		width: calc(25% - 30px)
+		margin-left: 30px
+		border-radius: 10px
+		box-shadow: 0 0 20px 2px rgba(0, 0, 0, .2)
+		&_picture
+			+coverdiv
+			&:before
+				content: ''
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 200%
+				+g($n, rgba(49, 89, 99, .8))
+				+tr(1s)
+				z-index: 2
+		&_img
+			+vcenter
+			width: 100%
+			height: auto
+			min-height: 100%
+			+tr(1s)
+		&_footer
+			position: absolute
+			bottom: 0
+			left: 0
+			right: 0
+			display: block
+			padding: 26px
+			text-align: left
+			z-index: 5
+	&__link
+		position: relative
+		display: block
+		height: 100%
+		border-radius: 10px
+		overflow: hidden
+		z-index: 3
+		&:hover
+			.link__more svg
+				+trx(10px)
+			.service__item
+				&_img
+					transform: translate(-50%, -50%) scale(1.1)
+				&_picture:before
+					top: -100%
+
+
+	.layout
+		height: 100%
+		min-height: 100vh
+		padding: 65px 0 90px
+	.title__section
+		color: #333742
+		text-transform: uppercase
+		+btl
+	.main-logo
+		position: absolute
+		display: inline-block
+		vertical-align: top
+		height: 40vh
+	.logo-f
+		top: -10%
+		fill: #d5e7eb
+	.logo-end
+		left: 70%
+		bottom: -10%
+		fill: #d5e7eb
+	.link__more
+		display: inline-block
+		vertical-align: top
+
+
+.waved
+	.service__item
+		&:nth-child(2n)
+			margin-top: 5%
+		&:nth-child(3n)
+			margin-top: 2%
+		&:nth-child(4n)
+			margin-top: 6%
+		&_footer
+			background-color: #fff
+			&:before
+				content: ''
+				position: absolute
+				bottom: 10%
+				left: 0
+				background-color: red
+				width: 53%
+				transform: rotate(153deg)
+				height: 100%
+				border-radius: 83px 54%/30% 100%
+
+		.link__more
+			display: flex
+			justify-content: space-between
+			align-items: center
+			color: #000
+		#right-arrow
+			fill: #000

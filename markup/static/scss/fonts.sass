@@ -1,0 +1,65 @@
+
++font('brandon_light', 'brandon_light')
++font('brandon_med', 'brandon_med')
++font('brandon_reg', 'brandon_reg')
++font('Butler', 'Butler')
++font('Butler-Light', 'Butler-Light')
+
+=btl
+	font-family: 'Butler-Light', Arial, sans-serif
+=bt
+	font-family: 'Butler', Arial, sans-serif
+=br
+	font-family: 'brandon_reg', Arial, sans-serif
+=bm
+	font-family: 'brandon_med', Arial, sans-serif
+=bl
+	font-family: 'brandon_light', Arial, sans-serif
+
+
+
+.title
+	&__main
+		letter-spacing: .2
+		text-align: center
+		text-transform: uppercase
+		color: #333742
+		font-size: 67px
+		+bt
+	&__section
+		font-size: 36px
+		letter-spacing: 0.09em
+		line-height: 1.2
+		color: #fff
+		+btl
+
+.desc
+	&_l
+		font-size: 18px
+		line-height: 1.3
+		opacity: .7
+		color: #fff
+		+bl
+	&_s
+		font-size: 18px
+		line-height: 1.3
+		color: #2E2E2E
+		letter-spacing: .01em
+		+bl
+
+.link__more
+	font-size: 18px
+	line-height: 1.3
+	color: #fff
+	letter-spacing: .1em
+	+bl
+	&:hover
+		svg
+			+trx(10px)
+	svg
+		height: 12px
+		display: inline-block
+		vertical-align: middle
+		fill: #fff
+		+tr(.4s)
+

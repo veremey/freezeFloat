@@ -1,0 +1,107 @@
+.resort
+	height: 100%
+	min-height: 100vh
+	&__bg
+		+coverdiv
+		background-color: #f5fafb
+	.layout
+		height: 100%
+		min-height: 100vh
+		padding: 65px 0 90px
+	.ice
+		position: absolute
+		top: -10px
+		left: 96%
+		display: inline-block
+		vertical-align: top
+		width: 120px
+	.waterWave
+		position: absolute
+		bottom: 0
+		left: 0
+
+.bubble
+	position: relative
+	border-radius: 100%
+	&__picture
+		margin-top: 6%
+		left: 26%
+		display: inline-block
+		vertical-align: top
+		font-size: 0
+		height: 46vw
+		width: 46vw
+		max-width: 440px
+		max-height: 440px
+		background-color: #74b7b7
+		z-index: 1
+		&:after
+			content: ''
+			display: inline-block
+			position: absolute
+			top: -60px
+			bottom: -60px
+			left: -60px
+			right: -60px
+			border-radius: 100%
+			border: 1px solid #e7eef0
+			border-right-color: $n
+			animation: rotation 40s
+		&_wrap
+			+coverdiv
+			border-radius: 100%
+			overflow: hidden
+			z-index: 10
+	&__img
+		+vcenter
+		min-width: 100%
+		min-height: 100%
+	&__content
+		margin-top: 10%
+		left: 19%
+		display: inline-block
+		vertical-align: top
+		height: 52vw
+		width: 52vw
+		max-width: 560px
+		max-height: 560px
+		padding: 60px 30px 60px 180px
+		background-color: #315963
+		&_small
+			margin-top: 8%
+			left: 10%
+			display: inline-block
+			vertical-align: top
+			text-align: left
+			height: 20vw
+			width: 20vw
+			max-width: 300px
+			max-height: 300px
+			padding: 5vw 30px 60px 40px
+			background-color: #333742
+			p
+				max-width: 100px
+	&__video
+		margin-top: 2%
+		left: 5%
+		display: inline-block
+		vertical-align: top
+		font-size: 0
+		height: 46vw
+		width: 46vw
+		max-width: 530px
+		max-height: 530px
+		border-radius: 100%
+		background-color: #74b7b7
+		overflow: hidden
+		iframe
+			+vcenter
+			min-height: 100%
+			min-width: 100%
+	&__text
+		.desc
+			margin-bottom: 1.8em
+	.title
+		text-transform: uppercase
+		margin-bottom: 1.5em
+

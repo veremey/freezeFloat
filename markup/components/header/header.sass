@@ -1,0 +1,78 @@
+
+.page-header
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	padding: 24px 0
+	border-bottom: 1px solid #fff
+	z-index: 200
+	&:after
+		content: ''
+		position: absolute
+		bottom: 0
+		left: 0
+		right: 0
+		height: 1px
+		background-color: #e3f3f6
+	&-bg
+		background-color: #fff
+
+.header
+	&__logo
+		position: absolute
+		top: -8px
+		left: 50%
+		+trx(-50%)
+	&__wrap
+		display: flex
+		align-items: center
+		justify-content: space-between
+	&__nav
+		display: flex
+		align-items: center
+		justify-content: space-between
+	&__list
+		font-size: 0
+		padding: 0
+		margin: 0
+		&:first-child
+			margin-right: 50px
+		&:last-child
+			margin-left: 50px
+	&__item
+		display: inline-block
+		position: relative
+		padding: 0 10px
+		&.is-active
+			.header__link
+				&:after
+					content: ''
+	&__link
+		position: relative
+		font-size: 14px
+		color: #555b5c
+		text-transform: uppercase
+		+tr(.4s)
+		&:after
+			content: none
+			position: absolute
+			top: 120%
+			left: 30%
+			right: 30%
+			height: 1px
+			background-color: #333
+			+tr(.4s)
+		&:hover
+			color: #333
+	&__btn
+		display: inline-block
+		vertical-align: top
+		text-align: center
+		padding: 10px 30px
+		background-color: $btn
+		font-size: 18px
+		letter-spacing: 1px
+		color: #fff
+		+bl
+		+anb
