@@ -85,12 +85,12 @@ _template: {
 	main: {
 		item: [
 			{list: [
-				{ link: 'Why Float'},
-				{ link: 'Services'},
+				{ link: 'float', name: 'Why Float'},
+				{ link: 'float-service', name: 'Services'},
 			]},
 			{list: [
-				{ link: 'about'},
-				{ link: 'contact us'}
+				{ link: 'about', name: 'about'},
+				{ link: 'contact', name: 'contact us'}
 			]},
 		]
 	},
@@ -98,12 +98,12 @@ _template: {
 		inner: 'header-inner',
 		item: [
 			{list: [
-				{ link: 'Why Float'},
-				{ link: 'Services'},
+				{ link: 'float', name: 'Why Float'},
+				{ link: 'float-service', name: 'Services'},
 			]},
 			{list: [
-				{ link: 'about', active: 'is-active'},
-				{ link: 'contact us'}
+				{ link: 'about', name: 'about', active: 'is-active'},
+				{ link: 'contact', name: 'contact us'}
 			]},
 		]
 	},
@@ -111,12 +111,12 @@ _template: {
 		inner: 'header-inner',
 		item: [
 			{list: [
-				{ link: 'Why Float'},
-				{ link: 'Services', active: 'is-active'},
+				{ link: 'float', name: 'Why Float'},
+				{ link: 'float-service', name: 'Services', active: 'is-active'},
 			]},
 			{list: [
-				{ link: 'about'},
-				{ link: 'contact us'}
+				{ link: 'about', name: 'about'},
+				{ link: 'contact', name: 'contact us'}
 			]},
 		]
 	},
@@ -124,12 +124,12 @@ _template: {
 		inner: 'header-inner',
 		item: [
 			{list: [
-				{ link: 'Why Float', active: 'is-active'},
-				{ link: 'Services'},
+				{ link: 'float', name: 'Why Float', active: 'is-active'},
+				{ link: 'float-service', name: 'Services'},
 			]},
 			{list: [
-				{ link: 'about'},
-				{ link: 'contact us'}
+				{ link: 'about', name: 'about'},
+				{ link: 'contact', name: 'contact us'}
 			]},
 		]
 	},
@@ -137,12 +137,12 @@ _template: {
 		inner: 'header-inner',
 		item: [
 			{list: [
-				{ link: 'Why freeze', active: 'is-active'},
-				{ link: 'Services'},
+				{ link: 'freeze', name: 'Why freeze', active: 'is-active'},
+				{ link: 'float-service', name: 'Services'},
 			]},
 			{list: [
-				{ link: 'about'},
-				{ link: 'contact us'}
+				{ link: 'about', name: 'about'},
+				{ link: 'contact', name: 'contact us'}
 			]},
 		]
 	}
