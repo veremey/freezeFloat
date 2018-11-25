@@ -1,4 +1,4 @@
-<div class="page-header">
+<div class="page-header {{#if inner}}{{inner}}{{/if}}">
 	<div class="layout">
 		<a href="/" class="header__logo">
 			<svg class="main-logo" height="57" viewBox="0 0 64 57" width="64" xmlns="http://www.w3.org/2000/svg">
@@ -56,14 +56,16 @@
 				</a>
 			</div>
 			<nav class="header__nav">
-				<ul class="header__list">
-					<li class="header__item"><a href="#" class="header__link">Why Float</a></li>
-					<li class="header__item"><a href="#" class="header__link">Services</a></li>
-				</ul>
-				<ul class="header__list">
-					<li class="header__item"><a href="#" class="header__link">About</a></li>
-					<li class="header__item"><a href="#" class="header__link">Contact Us</a></li>
-				</ul>
+				{{#each item}}
+					<ul class="header__list">
+						{{#each list}}
+							<li class="header__item {{#if active}}{{this.active}}{{/if}}">
+								<a href="/float.html" class="header__link"> {{this.link}} </a>
+							</li>
+						{{/each}}
+					</ul>
+				{{/each}}
+
 			</nav>
 			<button class="header__btn">Book</button>
 		</div>

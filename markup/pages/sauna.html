@@ -1,0 +1,54 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+    <head>
+        {{> head/head head.sauna}}
+    </head>
+
+    <body class="page">
+
+      <div class="page__wrapper">
+        <div id="barba-wrapper">
+          <div class="barba-container">
+
+            {{> header/header header.main}}
+
+            <!-- subheader -->
+            <div class="section subheader">
+              <div class="subheader__bg">
+                <div class="circle__bg">
+                  <img src="static/img/content/sauna.png" alt="subheader picture" class="circle__bg_img">
+                </div>
+              </div>
+              <div class="layout layout_flex">
+                <div class="layout__right">
+                  <h2 class="title__main" role="heading" aria-level="2" >Infrared Sauna</h2>
+                  <p class="desc desc_l">Our luxury Infrared Sauna provides a  natural way for, detoxing,  healing, and relaxation. The heat from infrared saunas uses infrared light to heat the body directly rather than the air like traditional saunas. Gently increasing your body’s core temperature, the infrared heat penetrates 2-3 inches deep into the body’s tissue. </p>
+                  </br>
+                  <p class="desc desc_l">Resulting in a more detoxifying sweat from the cellular level of the skin where many toxins are housed. Infrared Heat Therapy has been proven to provide the following health benefits. </p>
+                </div>
+                <a href="#" class="next__section js-nextSection">
+                  <img src="static/img/content/arrowDown.png" alt="to next section">
+                </a>
+              </div>
+            </div>
+            <!-- end subheader -->
+
+            {{> resort/resort resort.sauna}}
+            {{> benefits/benefits benefits.float}}
+            {{> video/video}}
+            {{> footer/footer}}
+
+          </div>
+        </div>
+      </div>
+
+      <script src="static/js/separate-js/barba.min.js"></script>
+
+      <script src="static/js/separate-js/jquery.min.js"></script>
+      <script src="static/js/separate-js/slick.min.js"></script>
+      <script src="static/js/separate-js/custom.js"></script>
+      <script src="%=static=%js/main%=hash=%%=min=%.js"></script>
+    </body>
+
+</html>

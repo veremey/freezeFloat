@@ -4,6 +4,14 @@
 	&__bg
 		+coverdiv
 		background-color: #f5fafb
+		&_text
+			position: absolute
+			font-size: 80px
+			line-height: 1.4
+			text-transform: uppercase
+			color: #333742
+			+bl
+
 	.layout
 		height: 100%
 		min-height: 100vh
@@ -21,11 +29,12 @@
 		left: 0
 
 .bubble
-	position: relative
-	border-radius: 100%
+	&__item
+		position: relative
+		border-radius: 100%
 	&__picture
 		margin-top: 6%
-		left: 26%
+		left: 18%
 		display: inline-block
 		vertical-align: top
 		font-size: 0
@@ -58,8 +67,10 @@
 		min-height: 100%
 	&__content
 		margin-top: 10%
-		left: 19%
-		display: inline-block
+		left: 12%
+		display: inline-flex
+		flex-direction: column
+		justify-content: center
 		vertical-align: top
 		height: 52vw
 		width: 52vw
@@ -104,4 +115,19 @@
 	.title
 		text-transform: uppercase
 		margin-bottom: 1.5em
+
+.float-resort
+	.bubble__picture
+		width: 56vw
+		height: 56vw
+	.bubble__content
+		width: 30vw
+		height: 30vw
+		z-index: 10
+		padding-left: 100px
+		margin-top: 15%
+
+.service-resort
+	.bubble__content
+		background-color: #2d303a
 

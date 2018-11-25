@@ -136,8 +136,20 @@ $startscreenOffset: 75
 			&:after
 				border-color: #fff
 				border-top-color: $n
+			svg
+				display: inline-block
+				vertical-align: top
+				height: 12px
+				margin-left: 10px
+			#rightArrow
+				background-color: #333
 
-
+	.leftArrow
+		display: inline-block
+		vertical-align: top
+		height: 12px
+		margin-right: 10px
+		+scale(-1)
 	.title__main
 		position: absolute
 		top: 20%

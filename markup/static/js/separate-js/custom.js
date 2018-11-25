@@ -1,3 +1,57 @@
+var ExpandTransition = Barba.BaseTransition.extend({
+  start: function() {
+    Promise
+      .all([this.newContainerLoading, this.fadeOut()])
+      .then(this.showNewPage.bind(this));
+  },
+
+  fadeOut: function() {
+  	$('.page').addClass('add-wave');
+  	setTimeout(function() {
+    		$('.page').removeClass('add-wave');
+    		$('.page').addClass('after-wave');
+    	}, 800);
+  	setTimeout(function() {
+    		$('.page').removeClass('after-wave');
+    	}, 2000);
+    return $(this.oldContainer).animate({ opacity: 0 }).promise();
+  },
+
+  fadeIn: function() {
+    var _this = this;
+    var $el = $(this.newContainer);
+
+    $(this.oldContainer).hide();
+
+    $el.css({
+      visibility : 'visible',
+      opacity : 0
+    });
+    // function()({
+    // 	setTimeout(function() {
+    // 		$('.page').removeClass('add-wave');
+    // 	}, 800);
+    // });
+
+    $el.animate({ opacity: 1 }, 400, function() {
+
+      _this.done();
+    });
+  },
+
+  showNewPage: function() {
+  	$(window).scrollTop(0);
+  	document.body.scrollTop = 0;
+    this.done();
+  }
+});
+
+Barba.Pjax.getTransition = function() {
+  return ExpandTransition;
+};
+
+Barba.Pjax.start();
+
 
 $(document).ready(function () {
 	/*-- CLIENT SLIDER ---*/
@@ -57,6 +111,23 @@ $(document).ready(function () {
 		}, 800, 'swing');
 
 	} );
+
+	/*--   wavw button    --*/
+
+	$('.wave-btn')
+		.on('mouseenter', function(e) {
+			var parentOffset = $(this).offset(),
+					relX = e.pageX - parentOffset.left,
+					relY = e.pageY - parentOffset.top;
+			$(this).find('em').css({top:relY, left:relX})
+		})
+		.on('mouseout', function(e) {
+			var parentOffset = $(this).offset(),
+					relX = e.pageX - parentOffset.left,
+					relY = e.pageY - parentOffset.top;
+			$(this).find('em').css({top:relY, left:relX})
+		});
+
 
 	/*--      --*/
 

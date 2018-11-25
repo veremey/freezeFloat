@@ -1,0 +1,85 @@
+
+.benefits
+	min-height: 100vh
+	&.picture-ben
+		.benefits__bg
+			background-color: #dff1f5
+	&__bg
+		+coverdiv
+		background-color: #fff
+	&__list
+		display: flex
+		flex-wrap: wrap
+		width: calc(100% + 20px)
+		list-style-type: none
+		padding: 0
+		font-size: 0
+		margin: 90px 0 0 -20px
+		text-align: left
+	&__item
+		display: inline-flex
+		align-items: center
+		justify-content: center
+		width: calc(25% - 20px)
+		margin: 10px 10px
+		border: 1px solid #e3f3f6
+		font-size: 18px
+		color: #333742
+		text-align: center
+		+btl
+		+anft
+	&__link
+		display: block
+		width: 100%
+		padding: 20px 30px
+		font-size: 18px
+		color: #333742
+		+btl
+
+	&__ben
+		display: flex
+		width: 46%
+		margin: 0 0 40px 20px
+		min-height: 128px
+	&__pic
+		position: relative
+		display: flex
+		align-items: center
+		justify-content: center
+		width: 128px
+		vertical-align: top
+		background-color: #fff
+		box-shadow: 0 0 14px rgba(0, 0, 0, .3)
+		border-radius: 10px
+		padding: 10px
+		margin-right: 30px
+	&__icon
+		display: inline-block
+		vertical-align: top
+		width: 60%
+	&__text
+		display: inline-block
+		vertical-align: top
+		width: calc(100% - 168px)
+
+	.title__section
+		color: #333742
+	.section__header
+		.desc
+			max-width: 730px
+	.main-logo
+		position: absolute
+		display: inline-block
+		vertical-align: top
+		height: 40vh
+	.logo-f
+		left: 70%
+		top: -5%
+	#logo-f
+		fill: #f1f4f4
+	.logo-end
+		left: 3%
+		right: auto
+		bottom: -10%
+		g
+			fill: #f1f4f4
