@@ -1,50 +1,56 @@
 <!doctype html>
 <html class="no-js" lang="en">
 
-    <head>
-        {{> head/head head.defaults}}
-    </head>
+  <head>
+      {{> head/head head.defaults}}
+  </head>
 
-    <body class="page">
+  <body class="page">
+    {{> loader/loader}}
 
-        <div class="page__wrapper">
-          <div id="barba-wrapper">
-            <div class="barba-container">
+    <div class="page__wrapper">
+      {{> header/header header.main}}
+      <div id="barba-wrapper">
+        <div class="barba-container">
 
-              <ul class="list">
-                <li class="list__item">
-                  <a href="main.html" class="list__link" target="_blank">main.html</a>
-                </li>
-                <li class="list__item">
-                  <a href="float.html" class="list__link" target="_blank">float.html</a>
-                </li>
-                <li class="list__item">
-                  <a href="freeze.html" class="list__link" target="_blank">freeze.html</a>
-                </li>
-                <li class="list__item">
-                  <a href="float-service.html" class="list__link" target="_blank">float-service.html</a>
-                </li>
-                <li class="list__item">
-                  <a href="sauna.html" class="list__link" target="_blank">sauna.html</a>
-                </li>
-                <li class="list__item">
-                  <a href="service.html" class="list__link" target="_blank">service.html</a>
-                </li>
-                <li class="list__item">
-                  <a href="about.html" class="list__link" target="_blank">about.html</a>
-                </li>
-              </ul>
+          <ul class="list">
+            <li class="list__item">
+              <a href="main.html" class="list__link" target="_blank">main.html</a>
+            </li>
+            <li class="list__item">
+              <a href="float.html" class="list__link" target="_blank">float.html</a>
+            </li>
+            <li class="list__item">
+              <a href="freeze.html" class="list__link" target="_blank">freeze.html</a>
+            </li>
+            <li class="list__item">
+              <a href="float-service.html" class="list__link" target="_blank">float-service.html</a>
+            </li>
+            <li class="list__item">
+              <a href="sauna.html" class="list__link" target="_blank">sauna.html</a>
+            </li>
+            <li class="list__item">
+              <a href="service.html" class="list__link" target="_blank">service.html</a>
+            </li>
+            <li class="list__item">
+              <a href="about.html" class="list__link" target="_blank">about.html</a>
+            </li>
+            <li class="list__item">
+              <a href="contact.html" class="list__link" target="_blank">contact.html</a>
+            </li>
+          </ul>
 
-            </div>
-          </div>
         </div>
+      </div>
+      {{> footer/footer}}
+    </div>
 
-        <script src="static/js/separate-js/barba.min.js"></script>
+    <script src="static/js/separate-js/barba.min.js"></script>
 
-        <script src="static/js/separate-js/jquery.min.js"></script>
-        <script src="static/js/separate-js/slick.min.js"></script>
-        <script src="static/js/separate-js/custom.js"></script>
-        <script src="%=static=%js/main%=hash=%%=min=%.js"></script>
-    </body>
+    <script src="static/js/separate-js/jquery.min.js"></script>
+    <script src="static/js/separate-js/slick.min.js"></script>
+    <script src="static/js/separate-js/custom.js"></script>
+    <script src="%=static=%js/main%=hash=%%=min=%.js"></script>
+  </body>
 
 </html>

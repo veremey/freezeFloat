@@ -58,6 +58,8 @@ _template: {
 
 'clients': {},
 
+'contact': {},
+
 'head': {
     defaults: {
         title: 'freeze&float',
@@ -145,6 +147,19 @@ _template: {
 				{ link: 'contact', name: 'contact us'}
 			]},
 		]
+	},
+	contact: {
+		inner: 'header-inner',
+		item: [
+			{list: [
+				{ link: 'freeze', name: 'Why freeze'},
+				{ link: 'float-service', name: 'Services'},
+			]},
+			{list: [
+				{ link: 'about', name: 'about'},
+				{ link: 'contact', name: 'contact us', active: 'is-active'}
+			]},
+		]
 	}
 },
 
@@ -191,6 +206,9 @@ _template: {
 __pages: [{
                 name: 'about',
                 href: 'about.html'
+             },{
+                name: 'contact',
+                href: 'contact.html'
              },{
                 name: 'float-service',
                 href: 'float-service.html'

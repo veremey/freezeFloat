@@ -62,5 +62,18 @@ var data = {header: {
 				{ link: 'contact', name: 'contact us'}
 			]},
 		]
+	},
+	contact: {
+		inner: 'header-inner',
+		item: [
+			{list: [
+				{ link: 'freeze', name: 'Why freeze'},
+				{ link: 'float-service', name: 'Services'},
+			]},
+			{list: [
+				{ link: 'about', name: 'about'},
+				{ link: 'contact', name: 'contact us', active: 'is-active'}
+			]},
+		]
 	}
 }};

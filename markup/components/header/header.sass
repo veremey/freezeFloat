@@ -6,7 +6,9 @@
 	width: 100%
 	padding: 24px 0
 	border-bottom: 1px solid #fff
-	z-index: 200
+	background-color: rgba(255, 255, 255, 0)
+	z-index: 2000
+	+tr(.6s)
 	&:after
 		content: ''
 		position: absolute
@@ -24,11 +26,13 @@
 		top: -8px
 		left: 50%
 		+trx(-50%)
+		z-index: 1
 	&__wrap
 		display: flex
 		align-items: center
 		justify-content: space-between
 	&__nav
+		position: relative
 		display: flex
 		align-items: center
 		justify-content: space-between
@@ -37,9 +41,9 @@
 		padding: 0
 		margin: 0
 		&:first-child
-			margin-right: 50px
+			margin-right: 90px
 		&:last-child
-			margin-left: 50px
+			margin-left: 90px
 	&__item
 		display: inline-block
 		position: relative
@@ -75,27 +79,19 @@
 		font-size: 18px
 		letter-spacing: 1px
 		color: #fff
-		overflow: hidden
-		+bl
-		&:hover
-			span
-				color: $btn
-			em
-				width: 200px
-				height: 200px
-		em
-			position: absolute
-			width: 0
-			height: 0
-			display: block
-			border-radius: 50%
-			background-color: #d5e7eb
-			transition: width 0.4s ease-in-out, height 0.4s ease-in-out
-			transform: translate(-50%, -50%)
-		span
-			position: relative
-			z-index: 2
-			+tr(.4s)
+
+	&__spin
+		position: absolute
+		top: 22px
+		left: 50%
+		display: inline-block
+		vertical-align: top
+		height: 1px
+		width: 0px
+		background-color: #555b5c
+		+tr(.6s)
+		// +trx(-25%)
 	&-inner
-		background-color: #fff
+		background-color: rgba(255, 255, 255, 1)
 		border-bottom: none
+		+tr(.6s)

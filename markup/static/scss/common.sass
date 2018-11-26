@@ -97,11 +97,33 @@ p
 	.logo-end
 		fill: #fff
 
-
+.wave-btn
+	position: relative
+	overflow: hidden
+	+bl
+	&:hover
+		span
+			color: $btn
+		em
+			width: 300%
+			height: 300%
+	em
+		position: absolute
+		width: 0
+		height: 0
+		display: block
+		border-radius: 50%
+		background-color: #d5e7eb
+		transition: width 0.4s ease-in-out, height 0.4s ease-in-out
+		transform: translate(-50%, -50%)
+	span
+		position: relative
+		z-index: 2
+		+tr(.4s)
 
 .list
 	width: 200px
-	margin: 60px auto
+	margin: 120px auto
 	list-style-type: none
 	&__item
 		margin-bottom: 1.3em

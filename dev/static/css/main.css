@@ -646,9 +646,44 @@ p {
   fill: #fff;
 }
 
+.wave-btn {
+  position: relative;
+  overflow: hidden;
+  font-family: 'brandon_light', Arial, sans-serif;
+}
+
+.wave-btn:hover span {
+  color: #315963;
+}
+
+.wave-btn:hover em {
+  width: 300%;
+  height: 300%;
+}
+
+.wave-btn em {
+  position: absolute;
+  width: 0;
+  height: 0;
+  display: block;
+  border-radius: 50%;
+  background-color: #d5e7eb;
+  -webkit-transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.wave-btn span {
+  position: relative;
+  z-index: 2;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
 .list {
   width: 200px;
-  margin: 60px auto;
+  margin: 120px auto;
   list-style-type: none;
 }
 
@@ -1251,6 +1286,106 @@ p {
           transform: scale(-1);
 }
 
+.contact__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+.contact .title__section {
+  color: #000;
+}
+
+.contact .main-logo {
+  position: absolute;
+  display: inline-block;
+  vertical-align: top;
+  height: 40vh;
+}
+
+.contact .logo-f {
+  left: 70%;
+  top: -5%;
+}
+
+.contact #logo-f {
+  fill: #f1f4f4;
+}
+
+.contact .logo-end {
+  left: 3%;
+  right: auto;
+  bottom: -10%;
+}
+
+.contact .logo-end g {
+  fill: #f1f4f4;
+}
+
+.formContact {
+  display: block;
+  width: 100%;
+  max-width: 834px;
+  margin: 40px auto;
+}
+
+.formContact__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.formContact__row .formContact__field {
+  width: 48%;
+}
+
+.formContact__field {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: top;
+  margin-bottom: 24px;
+}
+
+.formContact__field label {
+  position: absolute;
+  top: 10px;
+  left: 0;
+}
+
+.formContact__field input,
+.formContact__field textarea {
+  width: 100%;
+  height: 40px;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid #cbcbcb;
+  resize: vertical;
+}
+
+.formContact .btn {
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+  height: 40px;
+  background-color: #315963;
+  color: #fff;
+  overflow: hidden;
+  padding: 10px 30px;
+  background-color: #315963;
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-family: 'brandon_light', Arial, sans-serif;
+}
+
 .footer__column_wide {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 450px;
@@ -1316,7 +1451,10 @@ p {
   width: 100%;
   padding: 24px 0;
   border-bottom: 1px solid #fff;
-  z-index: 200;
+  background-color: rgba(255, 255, 255, 0);
+  z-index: 2000;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
 }
 
 .page-header:after {
@@ -1339,6 +1477,7 @@ p {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  z-index: 1;
 }
 
 .header__wrap {
@@ -1354,6 +1493,7 @@ p {
 }
 
 .header__nav {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1372,11 +1512,11 @@ p {
 }
 
 .header__list:first-child {
-  margin-right: 50px;
+  margin-right: 90px;
 }
 
 .header__list:last-child {
-  margin-left: 50px;
+  margin-left: 90px;
 }
 
 .header__item {
@@ -1424,42 +1564,26 @@ p {
   font-size: 18px;
   letter-spacing: 1px;
   color: #fff;
-  overflow: hidden;
-  font-family: 'brandon_light', Arial, sans-serif;
 }
 
-.header__btn:hover span, .video .btn:hover span {
-  color: #315963;
-}
-
-.header__btn:hover em, .video .btn:hover em {
-  width: 200px;
-  height: 200px;
-}
-
-.header__btn em, .video .btn em {
+.header__spin {
   position: absolute;
-  width: 0;
-  height: 0;
-  display: block;
-  border-radius: 50%;
-  background-color: #d5e7eb;
-  -webkit-transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
-.header__btn span, .video .btn span {
-  position: relative;
-  z-index: 2;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  top: 22px;
+  left: 50%;
+  display: inline-block;
+  vertical-align: top;
+  height: 1px;
+  width: 0px;
+  background-color: #555b5c;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
 }
 
 .header-inner {
-  background-color: #fff;
+  background-color: white;
   border-bottom: none;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
 }
 
 .resort {
