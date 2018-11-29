@@ -46,6 +46,17 @@
 			padding: 26px
 			text-align: left
 			z-index: 5
+		&_content
+			position: absolute
+			top: 0%
+			left: 0
+			right: 0
+			height: 100%
+			padding: 50px 30px
+			text-align: left
+			opacity: 0
+			+tr(.4s)
+			z-index: 10
 	&__link
 		position: relative
 		display: block
@@ -60,13 +71,23 @@
 				&_img
 					transform: translate(-50%, -50%) scale(1.1)
 				&_picture:before
+					background-color: rgba(49, 89, 99, .8)
 					top: -100%
-
+				&_content
+					opacity: 1
+		.desc_l
+			opacity: 1
+	.logo-f
+		height: 76vh
+		left: 180%
+		+trx(-180%)
+	.logo-end
+		left: 0%
+		height: 50vh
 	.title__section
 		color: #333742
 		text-transform: uppercase
 		+btl
-
 
 
 
@@ -80,20 +101,33 @@
 			margin-top: 6%
 		&_footer
 			background-color: #fff
-			&:before
-				content: ''
-				position: absolute
-				bottom: 20%
-				left: -30%
-				background-color: #fff
-				width: 53%
-				transform: rotate(160deg)
-				height: 100%
-				border-radius: 30% 100%/6% 100%
-				z-index: -1
-				+tr(.8s)
-			&:hover:before
-				left: 80%
+			padding: 26px
+			// &:before
+			// 	content: ''
+			// 	position: absolute
+			// 	bottom: 2%
+			// 	left: 5%
+			// 	background-color: #fff
+			// 	width: 53%
+			// 	transform: rotate(188deg)
+			// 	height: 144%
+			// 	border-radius: 200% 202%/233% 208%
+			// 	z-index: -1
+			// 	+tr(.8s)
+			// &:after
+			// 	content: ''
+			// 	position: absolute
+			// 	bottom: 20%
+			// 	left: 80%
+			// 	background-color: #fff
+			// 	width: 53%
+			// 	transform: rotate(160deg)
+			// 	height: 100%
+			// 	border-radius: 30% 100%/6% 100%
+			// 	z-index: -1
+			// 	+tr(.8s)
+			// &:hover:before
+			// 	left: 80%
 
 		.link__more
 			display: flex

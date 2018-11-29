@@ -3,35 +3,100 @@
 	&__bg
 		+coverdiv
 		background-color: #fff
+	&__details
+		width: 100%
+		max-width: 834px
+		margin: 0 auto
+		+r(768)
+			flex-wrap: wrap
+		.contact__wrap
+			width: 48%
+			text-align: left
+			+r(768)
+				width: 100%
+	&__list
+		padding: 0
+		margin: 0
+		list-style-type: none
+	&__item
+		display: flex
+		align-items: center
+		margin-bottom: 34px
+		font-size: 0
+	&__pic
+		position: relative
+		display: inline-block
+		vertical-align: top
+		text-align: center
+		width: 64px
+		height: 64px
+		background-color: #fff
+		box-shadow: 0 0 10px rgba(0, 0, 0, .4)
+		border-radius: 4px
+		padding: 10px
+		margin-right: 40px
+	&__img
+		display: inline-block
+		vertical-align: middle
+		width: 100%
+		margin-top: 50%
+		transform: translateY(-50%)
+	&__content
+		display: inline-block
+		vertical-align: top
+		width: calc(100% - 105px)
+
+	&-flex
+		display: flex
+		justify-content: space-between
 	.title__section
 		color: #000
+	.desc_s
+		font-size: 18px
+		+bl
+		a
+			color: inherit
+			+tr(.4s)
+			&:hover
+				color: $btn
 	.main-logo
 		position: absolute
 		display: inline-block
 		vertical-align: top
-		height: 40vh
+		height: 60vh
 	.logo-f
 		left: 70%
 		top: -5%
+		height: 60vh
 	#logo-f
 		fill: #f1f4f4
 	.logo-end
-		left: 3%
+		left: -3%
 		right: auto
 		bottom: -10%
 		g
 			fill: #f1f4f4
+	.socio
+		margin-top: 50px
+		&__link
+			padding: 0 20px
+			&:first-child
+				padding-left: 0
+
 
 .formContact
 	display: block
 	width: 100%
 	max-width: 834px
-	margin: 40px auto
+	margin: 40px auto 80px
 	&__row
 		display: flex
 		justify-content: space-between
+		flex-wrap: wrap
 		.formContact__field
 			width: 48%
+			+r(768)
+				width: 100%
 	&__field
 		position: relative
 		display: inline-block
@@ -57,11 +122,12 @@
 		width: 100%
 		display: inline-block
 		vertical-align: top
-		height: 40px
+		height: 48px
 		background-color: $btn
 		color: #fff
 		overflow: hidden
 		padding: 10px 30px
+		margin-top: 20px
 		background-color: $btn
 		font-size: 18px
 		letter-spacing: 1px

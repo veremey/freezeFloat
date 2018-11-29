@@ -1,4 +1,5 @@
 var barbaShort, barbaWide;
+
 function stopBarbaAnimation() {
   	clearTimeout(barbaShort);
   	clearTimeout(barbaWide);
@@ -71,9 +72,228 @@ Barba.Pjax.getTransition = function() {
 
 Barba.Pjax.start();
 
+// $('body, html').scrollTop(0);
+
+function initMap() {
+  var myLatLng = {lat: 41.892896, lng: -87.638387};
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 41.892896, lng: -87.638387},
+    zoom: 15,
+    styles: [
+            {
+                "featureType": "water",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#e9e9e9"
+                    },
+                    {
+                        "lightness": 17
+                    }
+                ]
+            },
+            {
+                "featureType": "landscape",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#f5f5f5"
+                    },
+                    {
+                        "lightness": 20
+                    }
+                ]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "geometry.fill",
+                "stylers": [
+                    {
+                        "color": "#ffffff"
+                    },
+                    {
+                        "lightness": 17
+                    }
+                ]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "geometry.stroke",
+                "stylers": [
+                    {
+                        "color": "#ffffff"
+                    },
+                    {
+                        "lightness": 29
+                    },
+                    {
+                        "weight": 0.2
+                    }
+                ]
+            },
+            {
+                "featureType": "road.arterial",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#ffffff"
+                    },
+                    {
+                        "lightness": 18
+                    }
+                ]
+            },
+            {
+                "featureType": "road.local",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#ffffff"
+                    },
+                    {
+                        "lightness": 16
+                    }
+                ]
+            },
+            {
+                "featureType": "poi",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#f5f5f5"
+                    },
+                    {
+                        "lightness": 21
+                    }
+                ]
+            },
+            {
+                "featureType": "poi.park",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#dedede"
+                    },
+                    {
+                        "lightness": 21
+                    }
+                ]
+            },
+            {
+                "elementType": "labels.text.stroke",
+                "stylers": [
+                    {
+                        "visibility": "on"
+                    },
+                    {
+                        "color": "#ffffff"
+                    },
+                    {
+                        "lightness": 16
+                    }
+                ]
+            },
+            {
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    {
+                        "saturation": 36
+                    },
+                    {
+                        "color": "#333333"
+                    },
+                    {
+                        "lightness": 40
+                    }
+                ]
+            },
+            {
+                "elementType": "labels.icon",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "featureType": "transit",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#f2f2f2"
+                    },
+                    {
+                        "lightness": 19
+                    }
+                ]
+            },
+            {
+                "featureType": "administrative",
+                "elementType": "geometry.fill",
+                "stylers": [
+                    {
+                        "color": "#fefefe"
+                    },
+                    {
+                        "lightness": 20
+                    }
+                ]
+            },
+            {
+                "featureType": "administrative",
+                "elementType": "geometry.stroke",
+                "stylers": [
+                    {
+                        "color": "#fefefe"
+                    },
+                    {
+                        "lightness": 17
+                    },
+                    {
+                        "weight": 1.2
+                    }
+                ]
+            }
+        ]
+  });
+
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    title: 'Hello World!'
+  });
+};
+
 
 function reloadDoc() {
+
+		if($('#map').length){
+			initMap();
+		}
+
 	$(document).ready(function () {
+
+
+		/* --- startscreen ---*/
+		/*-----------------------------------------------------------*/
+		$('.startscreen').on('click', function() {
+			console.log('click');
+			var arr = [];
+			$('.startscreen__spiner').on("mousemove", function (e) {
+				var height = $('.startscreen').height();
+				var width = $('.startscreen').width();
+
+				let x = +(((e.pageX - $('.startscreen').offset().left) / width) * 100).toFixed(2);
+				let y = + (((e.pageY - $('.startscreen').offset().top) / height) * 100).toFixed(2) ;
+
+				arr.push(x, y);
+
+				console.log(arr);
+			});
+		});
+
+
 		/*-- header nav */
 		$('.header__item').on('click', function() {
 			$('.header__item').removeClass('is-active');
@@ -91,6 +311,20 @@ function reloadDoc() {
 
 			stopBarbaAnimation();
 		});
+		/*-- fixed header --*/
+
+		// $(document).scroll(function(){
+
+		// 	var $scroll = $('body, html').scrollTop();
+		// 	console.log($scroll);
+
+		// 	if ($scroll > 6) {
+		// 		$('.page-header').addClass('page-scrolled');
+		// 	} else {
+		// 		$('.page-header').removeClass('page-scrolled');
+		// 	}
+		// });
+
 		/*-- CLIENT SLIDER ---*/
 		$('.clients__face').slick({
 			slidesToShow: 3,
@@ -170,6 +404,7 @@ function reloadDoc() {
 
 	});
 	// doc ready
+
 
 };
 

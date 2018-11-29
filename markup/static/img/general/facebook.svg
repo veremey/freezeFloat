@@ -1,17 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="9px" height="18px" viewBox="0 0 9 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
-    <title>facebook </title>
-    <desc>Created with Sketch.</desc>
-    <g id="Inner-Pages-3-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="0-0-7-Homepage" transform="translate(-224.000000, -36.000000)" fill="#315963">
-            <g id="header">
-                <g transform="translate(0.000000, 20.000000)" id="facebook-">
-                    <g transform="translate(224.000000, 16.000000)">
-                        <path d="M5.625,6.1875 L5.625,3.9375 C5.625,3.3165 6.129,2.8125 6.75,2.8125 L7.875,2.8125 L7.875,0 L5.625,0 C3.760875,0 2.25,1.510875 2.25,3.375 L2.25,6.1875 L0,6.1875 L0,9 L2.25,9 L2.25,18 L5.625,18 L5.625,9 L7.875,9 L9,6.1875 L5.625,6.1875 Z" id="Path"></path>
-                    </g>
-                </g>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg height="18" viewBox="0 0 9 18" width="9" xmlns="http://www.w3.org/2000/svg"><path d="m5.625 6.1875v-2.25c0-.621.504-1.125 1.125-1.125h1.125v-2.8125h-2.25c-1.864125 0-3.375 1.510875-3.375 3.375v2.8125h-2.25v2.8125h2.25v9h3.375v-9h2.25l1.125-2.8125z" fill="#315963" fill-rule="evenodd" transform=""/></svg>

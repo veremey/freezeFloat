@@ -2,12 +2,12 @@ var data = {header: {
 	main: {
 		item: [
 			{list: [
-				{ link: 'freezeFloat/dev/float', name: 'Why Float'},
-				{ link: 'freezeFloat/dev/float-service', name: 'Services'},
+				{ link: 'float', name: 'Why Float'},
+				{ link: 'float-service', name: 'Services'},
 			]},
 			{list: [
-				{ link: 'freezeFloat/dev/about', name: 'about'},
-				{ link: 'freezeFloat/dev/contact', name: 'contact us'}
+				{ link: 'about', name: 'about'},
+				{ link: 'contact', name: 'contact us'}
 			]},
 		]
 	},
@@ -15,12 +15,12 @@ var data = {header: {
 		inner: 'header-inner',
 		item: [
 			{list: [
-				{ link: 'freezeFloat/dev/float', name: 'Why Float'},
-				{ link: 'freezeFloat/dev/float-service', name: 'Services'},
+				{ link: 'float', name: 'Why Float'},
+				{ link: 'float-service', name: 'Services'},
 			]},
 			{list: [
-				{ link: 'freezeFloat/dev/about', name: 'about', active: 'is-active'},
-				{ link: 'freezeFloat/dev/contact', name: 'contact us'}
+				{ link: 'about', name: 'about', active: 'is-active'},
+				{ link: 'contact', name: 'contact us'}
 			]},
 		]
 	},
@@ -28,12 +28,12 @@ var data = {header: {
 		inner: 'header-inner',
 		item: [
 			{list: [
-				{ link: 'freezeFloat/dev/float', name: 'Why Float'},
-				{ link: 'freezeFloat/dev/float-service', name: 'Services', active: 'is-active'},
+				{ link: 'float', name: 'Why Float'},
+				{ link: 'float-service', name: 'Services', active: 'is-active'},
 			]},
 			{list: [
-				{ link: 'freezeFloat/dev/about', name: 'about'},
-				{ link: 'freezeFloat/dev/contact', name: 'contact us'}
+				{ link: 'about', name: 'about'},
+				{ link: 'contact', name: 'contact us'}
 			]},
 		]
 	},
@@ -41,12 +41,12 @@ var data = {header: {
 		inner: 'header-inner',
 		item: [
 			{list: [
-				{ link: 'freezeFloat/dev/float', name: 'Why Float', active: 'is-active'},
-				{ link: 'freezeFloat/dev/float-service', name: 'Services'},
+				{ link: 'float', name: 'Why Float', active: 'is-active'},
+				{ link: 'float-service', name: 'Services'},
 			]},
 			{list: [
-				{ link: 'freezeFloat/dev/about', name: 'about'},
-				{ link: 'freezeFloat/dev/contact', name: 'contact us'}
+				{ link: 'about', name: 'about'},
+				{ link: 'contact', name: 'contact us'}
 			]},
 		]
 	},
@@ -54,12 +54,12 @@ var data = {header: {
 		inner: 'header-inner',
 		item: [
 			{list: [
-				{ link: 'freezeFloat/devfreeze', name: 'Why freeze', active: 'is-active'},
-				{ link: 'freezeFloat/dev/float-service', name: 'Services'},
+				{ link: 'devfreeze', name: 'Why freeze', active: 'is-active'},
+				{ link: 'float-service', name: 'Services'},
 			]},
 			{list: [
-				{ link: 'freezeFloat/dev/about', name: 'about'},
-				{ link: 'freezeFloat/dev/contact', name: 'contact us'}
+				{ link: 'about', name: 'about'},
+				{ link: 'contact', name: 'contact us'}
 			]},
 		]
 	},
@@ -67,12 +67,12 @@ var data = {header: {
 		inner: 'header-inner',
 		item: [
 			{list: [
-				{ link: 'freezeFloat/devfreeze', name: 'Why freeze'},
-				{ link: 'freezeFloat/dev/float-service', name: 'Services'},
+				{ link: 'devfreeze', name: 'Why freeze'},
+				{ link: 'float-service', name: 'Services'},
 			]},
 			{list: [
-				{ link: 'freezeFloat/dev/about', name: 'about'},
-				{ link: 'freezeFloat/dev/contact', name: 'contact us', active: 'is-active'}
+				{ link: 'about', name: 'about'},
+				{ link: 'contact', name: 'contact us', active: 'is-active'}
 			]},
 		]
 	}
