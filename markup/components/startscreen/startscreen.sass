@@ -17,8 +17,6 @@ $new: polygon(100% 0, 20.48% 0.11%,20.48% 0.23%,20.48% 0.23%,20.48% 0.23%,20.48%
 		position: relative
 		display: flex
 		height: 100vh
-		width: 300vw
-		+trx(-33.3333%)
 		+tr(.4s)
 		&.to-left
 			.title__main
@@ -32,6 +30,12 @@ $new: polygon(100% 0, 20.48% 0.11%,20.48% 0.23%,20.48% 0.23%,20.48% 0.23%,20.48%
 				left: -40%
 				z-index: -10
 			.startscreen-main
+				left: 0
+				&:after
+					background-color: rgba(102, 153, 204, .4)
+				&_text
+					opacity: 1
+			.startscreen-main-freeze
 				opacity: 1
 
 		&.to-right
@@ -46,6 +50,12 @@ $new: polygon(100% 0, 20.48% 0.11%,20.48% 0.23%,20.48% 0.23%,20.48% 0.23%,20.48%
 				left: -40%
 				z-index: -10
 			.startscreen-main
+				left: 0
+				&:after
+					background-color: rgba(102, 153, 204, .4)
+				&_text
+					opacity: 1
+			.startscreen-main-float
 				opacity: 1
 	&__section
 		width: 100vw
@@ -66,7 +76,7 @@ $new: polygon(100% 0, 20.48% 0.11%,20.48% 0.23%,20.48% 0.23%,20.48% 0.23%,20.48%
 		top: 0
 		bottom: 0
 		width: 0%
-		transition: .4s .8s
+		transition: .4s //.4s
 		+r(768)
 			width: 50%
 		&_left
@@ -127,7 +137,7 @@ $new: polygon(100% 0, 20.48% 0.11%,20.48% 0.23%,20.48% 0.23%,20.48% 0.23%,20.48%
 		height: 100vh
 		z-index: -1
 		background-color: #e3f3f6
-		transition: .4s .8s
+		transition: .4s //.4s
 		+r(768)
 			width: 40%
 		&:after
@@ -244,27 +254,35 @@ $new: polygon(100% 0, 20.48% 0.11%,20.48% 0.23%,20.48% 0.23%,20.48% 0.23%,20.48%
 		position: absolute
 		top: 0
 		bottom: 0
-		left: 0
+		left: 50%
 		right: 0
-		opacity: 0
 		z-index: -2
 		clip-path: $new
+		transition: .4s //.4s
 		&:after
 			content: ''
 			+coverdiv
-			background-color: rgba(102, 153, 204, .4)
+			transition: .4s //.4s
+			// background-color: rgba(102, 153, 204, .4)
 		&_img
 			position: absolute
 			top: 50%
 			left: 50%
 			transform: translate(-50%, -50%)
-			opacity: .1
+			opacity: .3
+			min-width: 100%
+			min-height: 100%
 		&_content
+			+coverdiv
+			opacity: 0
+			transition: .4s //.4s
+		&_text
 			position: absolute
 			bottom: 160px
 			left: 50%
 			+trx(-50%)
 			z-index: 5
+			opacity: 0
 			p
 				color: #000
 
@@ -293,12 +311,9 @@ $new: polygon(100% 0, 20.48% 0.11%,20.48% 0.23%,20.48% 0.23%,20.48% 0.23%,20.48%
 				transform: translate(-50%, 0) scale(0)
 	.startscreen
 		&__half
-			width: 50%
+			width: 60%
 			&_left
 				left: 0
-				width: 60%
-			&_right
-				width: 60%
 		&-right-bg
 			width: 40%
 		&__nav_link

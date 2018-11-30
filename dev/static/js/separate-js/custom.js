@@ -294,12 +294,8 @@ function reloadDoc() {
           afterLoad: function(anchorLink, index){
             var thisClass = $(this).attr('class');
 
-            if(index == 1) {
-              toPosScrollbar(0, 0);
-            }
-            else {
-              toPosScrollbar(0, 5);
-            }
+            toPosScrollbar(0, 0);
+
 
             if($(this).hasClass('page-footer')){
               $(this).prev('.section').addClass('is-active');
@@ -319,15 +315,14 @@ function reloadDoc() {
             onInit: function() {
               $scrollbar__custom = $(this).find('.mCSB_container');
             },
-              onTotalScroll: function() {
-                toNextSlide();
-              },
-              onTotalScrollBack: function() {
-                toPrevSlide();
-
-              },
-              whileScrolling: function() {
-                var scrollTop = -parseFloat($scrollbar__custom.css('top').slice(0, -2));
+            onTotalScroll: function() {
+              toNextSlide();
+            },
+            onTotalScrollBack: function() {
+              toPrevSlide();
+            },
+            whileScrolling: function() {
+              var scrollTop = -parseFloat($scrollbar__custom.css('top').slice(0, -2));
             }
           }
         });
@@ -346,19 +341,63 @@ function reloadDoc() {
       $('.custom-scroll').mCustomScrollbar('scrollTo', pos, {
         scrollInertia: scrollInertia
       });
-    }/* --- startscreen nav ---*/
+    }
+    /* --- startscreen nav ---*/
     $('.js-to-left').click(function(e){
       e.preventDefault();
-      $(this).parents('.startscreen__spiner').addClass('to-left');
+      if ($(this).hasClass('is-active')) {
+
+        $('.startscreen__nav_link').removeClass('is-active');
+        $(this).parents('.startscreen__spiner').removeClass('to-right to-left');
+
+        // $(this).parents('.startscreen__spiner').removeClass('to-left');
+        $(this).html('<svg class="leftArrow" viewBox="0 0 18 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M12.1209908,0.180471502 C11.8757701,-0.0601571674 11.4676405,-0.0601571674 11.2138457,0.180471502 C10.968625,0.412970825 10.968625,0.799927739 11.2138457,1.03188511 L15.8135916,5.39300876 L0.635058749,5.39300876 C0.281232137,5.39355072 0,5.6601933 0,5.99566435 C0,6.3311354 0.281232137,6.60644928 0.635058749,6.60644928 L15.8135916,6.60644928 L11.2138457,10.9594436 C10.968625,11.2000723 10.968625,11.5875711 11.2138457,11.8195285 C11.4676405,12.0601572 11.8763417,12.0601572 12.1209908,11.8195285 L17.8096539,6.42597778 C18.0634487,6.19347846 18.0634487,5.80652154 17.8096539,5.57456418 L12.1209908,0.180471502 Z"></path></svg> Freeze');
+
+      } else {
+
+        var self = $(this);
+        $('.startscreen__nav_link').removeClass('is-active');
+        $(this).parents('.startscreen__spiner').removeClass('to-right to-left');
+
+        $('.startscreen__nav_right').html('Float <svg viewBox="0 0 18 12" height="12" width="18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="rightArrow"><path d="M12.1209908,0.180471502 C11.8757701,-0.0601571674 11.4676405,-0.0601571674 11.2138457,0.180471502 C10.968625,0.412970825 10.968625,0.799927739 11.2138457,1.03188511 L15.8135916,5.39300876 L0.635058749,5.39300876 C0.281232137,5.39355072 0,5.6601933 0,5.99566435 C0,6.3311354 0.281232137,6.60644928 0.635058749,6.60644928 L15.8135916,6.60644928 L11.2138457,10.9594436 C10.968625,11.2000723 10.968625,11.5875711 11.2138457,11.8195285 C11.4676405,12.0601572 11.8763417,12.0601572 12.1209908,11.8195285 L17.8096539,6.42597778 C18.0634487,6.19347846 18.0634487,5.80652154 17.8096539,5.57456418 L12.1209908,0.180471502 Z" id="Path"></path></g></svg>');
+
+          setTimeout(function(){
+            self.parents('.startscreen__spiner').addClass('to-left');
+            self.addClass('is-active');
+
+            self.html('Back <svg viewBox="0 0 18 12" height="12" width="18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="rightArrow"><path d="M12.1209908,0.180471502 C11.8757701,-0.0601571674 11.4676405,-0.0601571674 11.2138457,0.180471502 C10.968625,0.412970825 10.968625,0.799927739 11.2138457,1.03188511 L15.8135916,5.39300876 L0.635058749,5.39300876 C0.281232137,5.39355072 0,5.6601933 0,5.99566435 C0,6.3311354 0.281232137,6.60644928 0.635058749,6.60644928 L15.8135916,6.60644928 L11.2138457,10.9594436 C10.968625,11.2000723 10.968625,11.5875711 11.2138457,11.8195285 C11.4676405,12.0601572 11.8763417,12.0601572 12.1209908,11.8195285 L17.8096539,6.42597778 C18.0634487,6.19347846 18.0634487,5.80652154 17.8096539,5.57456418 L12.1209908,0.180471502 Z" id="Path"></path></g></svg>');
+          }, 800);
+
+      }
     });
+
     $('.js-to-right').click(function(e){
       e.preventDefault();
-      $(this).parents('.startscreen__spiner').addClass('to-right');
+
+      if ($(this).hasClass('is-active')) {
+
+        $('.startscreen__nav_link').removeClass('is-active');
+        $(this).parents('.startscreen__spiner').removeClass('to-right to-left');
+
+        $(this).html('Float <svg viewBox="0 0 18 12" height="12" width="18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="rightArrow"><path d="M12.1209908,0.180471502 C11.8757701,-0.0601571674 11.4676405,-0.0601571674 11.2138457,0.180471502 C10.968625,0.412970825 10.968625,0.799927739 11.2138457,1.03188511 L15.8135916,5.39300876 L0.635058749,5.39300876 C0.281232137,5.39355072 0,5.6601933 0,5.99566435 C0,6.3311354 0.281232137,6.60644928 0.635058749,6.60644928 L15.8135916,6.60644928 L11.2138457,10.9594436 C10.968625,11.2000723 10.968625,11.5875711 11.2138457,11.8195285 C11.4676405,12.0601572 11.8763417,12.0601572 12.1209908,11.8195285 L17.8096539,6.42597778 C18.0634487,6.19347846 18.0634487,5.80652154 17.8096539,5.57456418 L12.1209908,0.180471502 Z" id="Path"></path></g></svg>');
+      } else {
+        var self = $(this);
+        $('.startscreen__nav_link').removeClass('is-active');
+        $(this).parents('.startscreen__spiner').removeClass('to-right to-left');
+
+         $('.startscreen__nav_left').html('<svg class="leftArrow" viewBox="0 0 18 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M12.1209908,0.180471502 C11.8757701,-0.0601571674 11.4676405,-0.0601571674 11.2138457,0.180471502 C10.968625,0.412970825 10.968625,0.799927739 11.2138457,1.03188511 L15.8135916,5.39300876 L0.635058749,5.39300876 C0.281232137,5.39355072 0,5.6601933 0,5.99566435 C0,6.3311354 0.281232137,6.60644928 0.635058749,6.60644928 L15.8135916,6.60644928 L11.2138457,10.9594436 C10.968625,11.2000723 10.968625,11.5875711 11.2138457,11.8195285 C11.4676405,12.0601572 11.8763417,12.0601572 12.1209908,11.8195285 L17.8096539,6.42597778 C18.0634487,6.19347846 18.0634487,5.80652154 17.8096539,5.57456418 L12.1209908,0.180471502 Z"></path></svg> Freeze');
+
+        setTimeout(function() {
+          self.parents('.startscreen__spiner').addClass('to-right');
+          self.addClass('is-active');
+          self.html('<svg class="leftArrow" viewBox="0 0 18 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M12.1209908,0.180471502 C11.8757701,-0.0601571674 11.4676405,-0.0601571674 11.2138457,0.180471502 C10.968625,0.412970825 10.968625,0.799927739 11.2138457,1.03188511 L15.8135916,5.39300876 L0.635058749,5.39300876 C0.281232137,5.39355072 0,5.6601933 0,5.99566435 C0,6.3311354 0.281232137,6.60644928 0.635058749,6.60644928 L15.8135916,6.60644928 L11.2138457,10.9594436 C10.968625,11.2000723 10.968625,11.5875711 11.2138457,11.8195285 C11.4676405,12.0601572 11.8763417,12.0601572 12.1209908,11.8195285 L17.8096539,6.42597778 C18.0634487,6.19347846 18.0634487,5.80652154 17.8096539,5.57456418 L12.1209908,0.180471502 Z"></path></svg> Back');
+        }, 800 )
+
+
+
+      }
     });
-    $('.js-to-start').click(function(e){
-      e.preventDefault();
-      $(this).parents('.startscreen__spiner').removeClass('to-right to-left');
-    });
+
     /*-----------------------------------------------------------*/
 
     /* --- fixed prefooter animation ---*/
@@ -366,26 +405,7 @@ function reloadDoc() {
       $(this).prev('.section').addClass('active');
     }
     /*-----------------------------------------------------------*/
-		/* --- startscreen drow curved line ---*/
-		// var akk = [];
-  //   $('.startscreen').on('click', function() {
-  //     console.log('click');
-  //     akk = []
-		// 	$('.startscreen__spiner').on("mousemove", function (e) {
-		// 		var height = $('.startscreen').height();
-		// 		var width = $('.startscreen__half_right').width();
 
-		// 		var x = (((e.pageX - ($('.startscreen__half_right').offset().left)) / width) * 100).toFixed(2) + '%';
-		// 		var y = (((e.pageY - $('.startscreen').offset().top) / height) * 100).toFixed(2) + '%' ;
-
-		// 		akk.push(x, y);
-  //       console.log(akk);
-
-		// 		// console.log(akk);
-  //       document.getElementById("resort").innerHTML = "You have clicked at: " + akk;
-		// 	});
-		// });
-    /*-----------------------------------------------------------*/
 		/*-- header nav */
 		$('.header__item').on('click', function() {
 			$('.header__item').removeClass('is-active');
@@ -403,19 +423,6 @@ function reloadDoc() {
 
 			stopBarbaAnimation();
 		});
-		/*-- fixed header --*/
-
-		// $(document).scroll(function(){
-
-		// 	var $scroll = $('body, html').scrollTop();
-		// 	console.log($scroll);
-
-		// 	if ($scroll > 6) {
-		// 		$('.page-header').addClass('page-scrolled');
-		// 	} else {
-		// 		$('.page-header').removeClass('page-scrolled');
-		// 	}
-		// });
 
 		/*-- CLIENT SLIDER ---*/
 		$('.clients__face').slick({
