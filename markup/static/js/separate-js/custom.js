@@ -73,6 +73,8 @@ Barba.Pjax.getTransition = function() {
 Barba.Pjax.start();
 
 // $('body, html').scrollTop(0);
+/* --- Map ---*/
+/*-----------------------------------------------------------*/
 
 function initMap() {
   var myLatLng = {lat: 41.892896, lng: -87.638387};
@@ -268,11 +270,85 @@ function initMap() {
 
 function reloadDoc() {
 
-		if($('#map').length){
-			initMap();
-		}
+  /* --- add map ---*/
+  /*-----------------------------------------------------------*/
+
+	if($('#map').length){
+		initMap();
+	}
 
 	$(document).ready(function () {
+
+    /* --- full page scroll ---*/
+    /*-----------------------------------------------------------*/
+    $('.barba-container').fullpage({
+        //options here
+        autoScrolling: true,
+        // onLeave: function(index, nextIndex, direction){
+        //   alert('onLeave fired');
+        // },
+        afterLoad: function(anchorLink, index){
+          var thisClass = $(this).attr('class');
+
+          // if(index == 1) {
+          //   toPosScrollbar(0, 0);
+          // }
+          // else {
+          //   toPosScrollbar(0, 5);
+          // }
+
+          if($(this).hasClass('page-footer')){
+            $(this).prev('.section').addClass('is-active');
+          }
+
+        }
+    });
+
+    // $('.layout').each(function(index, el) {
+    //   var $section_wrap = $(this);
+
+    //   var $scrollbar__custom;
+    //   $section_wrap.mCustomScrollbar({
+    //     scrollInertia: 200,
+    //     mouseWheel:{ preventDefault: false },
+    //     callbacks: {
+    //       onInit: function() {
+    //         $scrollbar__custom = $(this).find('.mCSB_container');
+    //       },
+    //         onTotalScroll: function() {
+    //           toNextSlide();
+    //         },
+    //         onTotalScrollBack: function() {
+    //           toPrevSlide();
+
+    //         },
+    //         whileScrolling: function() {
+    //           var scrollTop = -parseFloat($scrollbar__custom.css('top').slice(0, -2));
+    //       }
+    //     }
+    //   });
+    // });
+
+    // function toNextSlide() {
+    //   $.fn.fullpage.moveSectionDown();
+    // }
+
+    // function toPrevSlide() {
+    //   $.fn.fullpage.moveSectionUp();
+    // }
+
+    // function toPosScrollbar(scrollInertia, pos) {
+    //   $('.layout').mCustomScrollbar('scrollTo', pos, {
+    //     scrollInertia: scrollInertia
+    //   });
+    // }
+
+    /* --- fixed prefooter animation ---*/
+    if($('.page-footer').hasClass('active')){
+      $(this).prev('.section').addClass('active');
+    }
+    /*-----------------------------------------------------------*/
+
 
 
 		/* --- startscreen ---*/

@@ -84,8 +84,11 @@ p
 			left: -300%
 			top: -50%
 			+tr(.8s)
-	&__footer
+	&-footer
 		position: relative
+		&.section
+			padding-top: 0
+			min-height: auto
 		+r(786)
 			box-shadow: 0 0 30px rgba(0, 0, 0, .2)
 
@@ -100,8 +103,10 @@ p
 	// 	background: #f00
 	// 	margin-left: -1px
 	// 	z-index: 555
-	> .section
-		padding-top: 90px
+	// .section
+	// 	padding-top: 90px
+	.page-footer.section
+		padding-top: 0
 
 .load-logo
 	position: fixed
@@ -200,9 +205,14 @@ p
 		display: flex
 		flex-direction: column
 		justify-content: center
+		//
+		// height: 100vh
+		// overflow: hidden
+		//
+
 		height: 100%
 		min-height: 100%
-		padding: 65px 15px 90px
+		padding: 95px 15px 90px
 
 .main-logo
 	.logo-shape
@@ -347,3 +357,6 @@ p
 	+r(768)
 		margin-top: 60px
 
+// .fp-tableCell,
+// .section
+// 	overflow: auto

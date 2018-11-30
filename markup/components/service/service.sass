@@ -1,3 +1,5 @@
+$items: 12
+
 .service
 	min-height: 100vh
 	&__bg
@@ -17,8 +19,14 @@
 		height: 432px
 		width: calc(25% - 30px)
 		margin-left: 30px
+		margin-bottom: 20px
 		border-radius: 10px
 		box-shadow: 0 0 20px 2px rgba(0, 0, 0, .2)
+
+		transform: rotateY(-90deg)
+		transform-origin: 0 50%
+		transition: .4s .4s
+
 		&_picture
 			+coverdiv
 			&:before
@@ -89,7 +97,9 @@
 		text-transform: uppercase
 		+btl
 
-
+@for $i from 1 through $items
+	.service__item:nth-of-type(#{$i})
+		transition-delay: #{$i * 0.2 + s}
 
 .waved
 	.service__item
@@ -136,3 +146,8 @@
 			color: #000
 		#right-arrow
 			fill: #000
+
+
+.service.active
+	.service__item
+		transform: rotateY(0deg)

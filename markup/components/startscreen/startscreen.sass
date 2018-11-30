@@ -31,17 +31,20 @@ $startscreenOffset: 75
 		position: absolute
 		top: 0
 		bottom: 0
-		width: 50%
+		width: 0%
+		transition: .4s .8s
 		&_left
 			// background-color: darkcyan
 			// border-right: 2px solid red
+			left: -300px
 			z-index: -1
 			.startscreen__img
 				left: 100%
 				margin-left: -320px
 		&_right
 			right: 0
-			width: 60%
+			// width: 60%
+
 			// background-color: rgba(255, 0, 0, .1)
 			clip-path: ellipse(26% 51% at 39.3% 76%)
 			&:after
@@ -64,14 +67,16 @@ $startscreenOffset: 75
 		top: 30%
 		transform-origin: 50% 50%
 		animation: rotation 30s linear infinite
-	&-right
+	&-right-bg
 		position: absolute
 		top: 0
 		right: 0
-		width: 40%
+		// width: 40%
+		width: 0
 		height: 100vh
 		z-index: -1
 		background-color: #e3f3f6
+		transition: .4s .8s
 		&:after
 			content: ''
 			position: absolute
@@ -133,7 +138,9 @@ $startscreenOffset: 75
 			color: #000
 			font-size: 17px
 			letter-spacing: .12em
+			transform: scale(0)
 			+bl
+			transition: .6s 1.2s
 			&:after
 				content: ''
 				position: absolute
@@ -162,7 +169,6 @@ $startscreenOffset: 75
 			#rightArrow
 				background-color: #333
 
-
 	.leftArrow
 		display: inline-block
 		vertical-align: top
@@ -173,4 +179,26 @@ $startscreenOffset: 75
 		position: absolute
 		top: 20%
 		left: 50%
-		+trx(-50%)
+		transform: translate(-50%, 0) scale(0)
+		transition: .4s .6s
+
+.fp-viewing-0
+	&.add-wave
+		.startscreen
+			.title__main
+				transform: translate(-50%, 0) scale(0)
+	.startscreen
+		&__half
+			width: 50%
+			&_left
+				left: 0
+			&_right
+				width: 60%
+		&-right-bg
+			width: 40%
+		&__nav_link
+			transform: scale(1)
+		.title__main
+			transform: translate(-50%, 0) scale(1)
+
+
