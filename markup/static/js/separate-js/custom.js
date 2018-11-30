@@ -281,95 +281,111 @@ function reloadDoc() {
 
     /* --- full page scroll ---*/
     /*-----------------------------------------------------------*/
-    $('.barba-container').fullpage({
-        //options here
-        autoScrolling: true,
-        // onLeave: function(index, nextIndex, direction){
-        //   alert('onLeave fired');
-        // },
-        afterLoad: function(anchorLink, index){
-          var thisClass = $(this).attr('class');
+    if($(document).width() > 768){
+      $('.barba-container').fullpage({
+          //options here
+          autoScrolling: true,
+          onLeave: function(index, nextIndex, direction){
+            if(direction == 'up') {
+              $(this).removeClass('is-active');
+            }
+          },
 
-          // if(index == 1) {
-          //   toPosScrollbar(0, 0);
-          // }
-          // else {
-          //   toPosScrollbar(0, 5);
-          // }
+          afterLoad: function(anchorLink, index){
+            var thisClass = $(this).attr('class');
 
-          if($(this).hasClass('page-footer')){
-            $(this).prev('.section').addClass('is-active');
+            if(index == 1) {
+              toPosScrollbar(0, 0);
+            }
+            else {
+              toPosScrollbar(0, 5);
+            }
+
+            if($(this).hasClass('page-footer')){
+              $(this).prev('.section').addClass('is-active');
+            }
+
           }
+      });
 
-        }
+      $('.custom-scroll').each(function(index, el) {
+        var $section_wrap = $(this);
+
+        var $scrollbar__custom;
+        $section_wrap.mCustomScrollbar({
+          scrollInertia: 200,
+          mouseWheel:{ preventDefault: false },
+          callbacks: {
+            onInit: function() {
+              $scrollbar__custom = $(this).find('.mCSB_container');
+            },
+              onTotalScroll: function() {
+                toNextSlide();
+              },
+              onTotalScrollBack: function() {
+                toPrevSlide();
+
+              },
+              whileScrolling: function() {
+                var scrollTop = -parseFloat($scrollbar__custom.css('top').slice(0, -2));
+            }
+          }
+        });
+      });
+    }
+
+    function toNextSlide() {
+      $.fn.fullpage.moveSectionDown();
+    }
+
+    function toPrevSlide() {
+      $.fn.fullpage.moveSectionUp();
+    }
+
+    function toPosScrollbar(scrollInertia, pos) {
+      $('.custom-scroll').mCustomScrollbar('scrollTo', pos, {
+        scrollInertia: scrollInertia
+      });
+    }/* --- startscreen nav ---*/
+    $('.js-to-left').click(function(e){
+      e.preventDefault();
+      $(this).parents('.startscreen__spiner').addClass('to-left');
     });
-
-    // $('.layout').each(function(index, el) {
-    //   var $section_wrap = $(this);
-
-    //   var $scrollbar__custom;
-    //   $section_wrap.mCustomScrollbar({
-    //     scrollInertia: 200,
-    //     mouseWheel:{ preventDefault: false },
-    //     callbacks: {
-    //       onInit: function() {
-    //         $scrollbar__custom = $(this).find('.mCSB_container');
-    //       },
-    //         onTotalScroll: function() {
-    //           toNextSlide();
-    //         },
-    //         onTotalScrollBack: function() {
-    //           toPrevSlide();
-
-    //         },
-    //         whileScrolling: function() {
-    //           var scrollTop = -parseFloat($scrollbar__custom.css('top').slice(0, -2));
-    //       }
-    //     }
-    //   });
-    // });
-
-    // function toNextSlide() {
-    //   $.fn.fullpage.moveSectionDown();
-    // }
-
-    // function toPrevSlide() {
-    //   $.fn.fullpage.moveSectionUp();
-    // }
-
-    // function toPosScrollbar(scrollInertia, pos) {
-    //   $('.layout').mCustomScrollbar('scrollTo', pos, {
-    //     scrollInertia: scrollInertia
-    //   });
-    // }
+    $('.js-to-right').click(function(e){
+      e.preventDefault();
+      $(this).parents('.startscreen__spiner').addClass('to-right');
+    });
+    $('.js-to-start').click(function(e){
+      e.preventDefault();
+      $(this).parents('.startscreen__spiner').removeClass('to-right to-left');
+    });
+    /*-----------------------------------------------------------*/
 
     /* --- fixed prefooter animation ---*/
     if($('.page-footer').hasClass('active')){
       $(this).prev('.section').addClass('active');
     }
     /*-----------------------------------------------------------*/
+		/* --- startscreen drow curved line ---*/
+		// var akk = [];
+  //   $('.startscreen').on('click', function() {
+  //     console.log('click');
+  //     akk = []
+		// 	$('.startscreen__spiner').on("mousemove", function (e) {
+		// 		var height = $('.startscreen').height();
+		// 		var width = $('.startscreen__half_right').width();
 
+		// 		var x = (((e.pageX - ($('.startscreen__half_right').offset().left)) / width) * 100).toFixed(2) + '%';
+		// 		var y = (((e.pageY - $('.startscreen').offset().top) / height) * 100).toFixed(2) + '%' ;
 
+		// 		akk.push(x, y);
+  //       console.log(akk);
 
-		/* --- startscreen ---*/
-		/*-----------------------------------------------------------*/
-		$('.startscreen').on('click', function() {
-			console.log('click');
-			var arr = [];
-			$('.startscreen__spiner').on("mousemove", function (e) {
-				var height = $('.startscreen').height();
-				var width = $('.startscreen').width();
-
-				let x = +(((e.pageX - $('.startscreen').offset().left) / width) * 100).toFixed(2);
-				let y = + (((e.pageY - $('.startscreen').offset().top) / height) * 100).toFixed(2) ;
-
-				arr.push(x, y);
-
-				console.log(arr);
-			});
-		});
-
-
+		// 		// console.log(akk);
+  //       document.getElementById("resort").innerHTML = "You have clicked at: " + akk;
+		// 	});
+		// });
+    /*-----------------------------------------------------------*/
 		/*-- header nav */
 		$('.header__item').on('click', function() {
 			$('.header__item').removeClass('is-active');
@@ -413,7 +429,14 @@ function reloadDoc() {
 			// variableWidth: true,
 			prevArrow: '.btn-prev',
 			nextArrow: '.btn-next',
-			asNavFor: '.clients__bottom'
+			asNavFor: '.clients__bottom',
+      responsive: [
+        {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1
+        }
+      }]
 		});
 
 		$('.clients__bottom').slick({
@@ -485,3 +508,5 @@ function reloadDoc() {
 };
 
 reloadDoc();
+
+

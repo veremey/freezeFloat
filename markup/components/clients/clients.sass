@@ -1,3 +1,4 @@
+$items: 12
 
 .clients
 	@extend .service
@@ -45,6 +46,8 @@
 			+scale(1)
 			img
 				box-shadow: 0 0 20px rgba(0, 0, 0, .7)
+				+r(768)
+					margin: 0 auto
 		&.is-hidden
 			opacity: 0
 			+tr(.2s)
@@ -91,4 +94,3 @@
 		+tr(.4s)
 	.leftArrow
 		+scale(-1)
-

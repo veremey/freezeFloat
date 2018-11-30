@@ -27,6 +27,9 @@
 		position: absolute
 		bottom: 0
 		left: -50%
+		+r(786)
+			bottom: 0
+			left: 0
 		// transform: translate3d(0, 0, 0) scale(0)
 		// transition: .6s
 
@@ -37,6 +40,8 @@
 		left: 0
 		transform: translate3d(0, 0, 0) scale(0)
 		transition: .4s cubic-bezier(.17,.67,.85,1.36) .6s
+		+r(768)
+			transform: translate3d(0, 0, 0) scale(1)
 	&__picture
 		margin-top: 16%
 		// left: 18%
@@ -51,6 +56,12 @@
 		background-color: #74b7b7
 		z-index: 1
 		transition-delay: .6s
+		+r(768)
+			position: absolute
+			top: 80px
+			left: 70%
+			+trx(-70%)
+			margin-top: 0
 		&:after
 			content: ''
 			display: inline-block
@@ -87,6 +98,14 @@
 		padding: 60px 30px 60px 180px
 		background-color: #315963
 		transition-delay: .6s
+		+r(768)
+			display: block
+			width: 100%
+			height: auto
+			border-radius: 0
+			left: 0
+			max-width: none
+			padding-left: 20px
 		&_small
 			margin-top: 12%
 			left: 23%
@@ -99,13 +118,35 @@
 			max-height: 300px
 			padding: 5vw 30px 60px 40px
 			background-color: #333742
-			transition-delay: .6s
+			// transition-delay: .6s
+			transition-delay: 1s
+			+r(768)
+				display: block
+				text-align: center
+				position: relative
+				left: 0
+				margin-top: 0
+				text-align: center
+				width: auto
+				height: auto
+				max-width: none
+				max-height: none
+				border-radius: 0
+				padding: 10px 20px
+				transform: translate3d(0, 0, 0) scale(1)
+				transition-delay: .6s
 			.bubble__text
 				margin-top: 50%
 				+try(-100%)
+				+r(768)
+					text-align: center
 
+					margin-top: 0
+					+try(0)
 			p
 				max-width: 100px
+				+r(768)
+
 	&__video
 		margin-top: 2%
 		left: -10%
@@ -119,7 +160,18 @@
 		border-radius: 100%
 		background-color: #74b7b7
 		overflow: hidden
-		transition-delay: .6s
+		transition-delay: 1s
+		+r(768)
+			display: block
+			width: 100%
+
+			margin-top: 0
+			left: 0
+			border-radius: 0
+			max-width: none
+			max-height: none
+			transform: translate3d(0, 0, 0) scale(1)
+			transition-delay: .6s
 		iframe
 			+vcenter
 			min-height: 100%
@@ -127,18 +179,20 @@
 	&__text
 		.desc
 			margin-bottom: 1.8em
+			+r(768)
+				max-width: 100%
+				margin-bottom: 0
 	.title
 		text-transform: uppercase
 		margin-bottom: 1.5em
-
 
 .float-resort
 	.bubble__picture
 		width: 56vw
 		height: 56vw
 	.bubble__content
-		width: 30vw
-		height: 30vw
+		width: 36vw
+		height: 36vw
 		z-index: 10
 		padding-left: 100px
 		margin-top: 15%
@@ -152,7 +206,6 @@
 .service-resort
 	.bubble__content
 		background-color: #2d303a
-
 
 .resort.active
 	.bubble__item
@@ -172,14 +225,15 @@
 		// transform: translate3d(0, 0, 0) scale(1)
 		// transition: .6s 1.2s
 
-
 .video.active,
 .video.is-active
 	.bubble__content_small
 		margin-top: 8%
 		left: 10%
 		transform: translate3d(0, 0, 0) scale(1)
+		transition-delay: .6s
 	.bubble__video
 		margin-top: 2%
 		left: 5%
 		transform: translate3d(0, 0, 0) scale(1)
+		transition-delay: .6s

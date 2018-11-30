@@ -64,7 +64,7 @@ y-axis
 
 	.mCSB_scrollTools{ /* contains scrollbar markup (draggable element, dragger rail, buttons etc.) */
 		position: absolute;
-		width: 11px;
+		width: 7px;
 		height: auto;
 		left: auto;
 		top: 0;
@@ -352,7 +352,7 @@ yx-axis
 	}
 
 	.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
-		background-color: #0089c4;;
+		background-color: #838383;
 	}
 
 	.mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar{

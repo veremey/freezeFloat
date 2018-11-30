@@ -21,16 +21,18 @@
                 <img src="static/img/content/sauna.png" alt="subheader picture" class="circle__bg_img">
               </div>
             </div>
-            <div class="layout layout_flex">
-              <div class="layout__right">
-                <h2 class="title__main" role="heading" aria-level="2" >Infrared Sauna</h2>
-                <p class="desc desc_l">Our luxury Infrared Sauna provides a  natural way for, detoxing,  healing, and relaxation. The heat from infrared saunas uses infrared light to heat the body directly rather than the air like traditional saunas. Gently increasing your body’s core temperature, the infrared heat penetrates 2-3 inches deep into the body’s tissue. </p>
-                </br>
-                <p class="desc desc_l">Resulting in a more detoxifying sweat from the cellular level of the skin where many toxins are housed. Infrared Heat Therapy has been proven to provide the following health benefits. </p>
+            <div class="custom-scroll">
+              <div class="layout layout_flex">
+                <div class="layout__right">
+                  <h2 class="title__main" role="heading" aria-level="2" >Infrared Sauna</h2>
+                  <p class="desc desc_l">Our luxury Infrared Sauna provides a  natural way for, detoxing,  healing, and relaxation. The heat from infrared saunas uses infrared light to heat the body directly rather than the air like traditional saunas. Gently increasing your body’s core temperature, the infrared heat penetrates 2-3 inches deep into the body’s tissue. </p>
+                  </br>
+                  <p class="desc desc_l">Resulting in a more detoxifying sweat from the cellular level of the skin where many toxins are housed. Infrared Heat Therapy has been proven to provide the following health benefits. </p>
+                </div>
+                <a href="#" class="next__section js-nextSection">
+                  <img src="static/img/content/arrowDown.png" alt="to next section">
+                </a>
               </div>
-              <a href="#" class="next__section js-nextSection">
-                <img src="static/img/content/arrowDown.png" alt="to next section">
-              </a>
             </div>
           </div>
           <!-- end subheader -->
@@ -38,9 +40,9 @@
           {{> resort/resort resort.service}}
           {{> benefits/benefits benefits.service}}
 
+          {{> footer/footer}}
         </div>
       </div>
-      {{> footer/footer}}
     </div>
 
     <script src="static/js/separate-js/barba.min.js"></script>
@@ -48,9 +50,13 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbLrk_U3A3cmzluLf0JBQCKmoeODE71pE"></script>
 
     <script src="static/js/separate-js/jquery.min.js"></script>
+
+    <script src="static/js/separate-js/fullpage.min.js"></script>
+    <script src="static/js/separate-js/jquery.mCustomScrollbar.js"></script>
     <script src="static/js/separate-js/slick.min.js"></script>
     <script src="static/js/separate-js/custom.js"></script>
     <script src="%=static=%js/main%=hash=%%=min=%.js"></script>
+
   </body>
 
 </html>

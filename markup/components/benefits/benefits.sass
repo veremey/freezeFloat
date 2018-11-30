@@ -14,7 +14,8 @@
 		list-style-type: none
 		padding: 0
 		font-size: 0
-		margin: 90px 0 0 -20px
+		margin: 0px 0 0 -20px
+		// margin: 90px 0 0 -20px
 		text-align: left
 	&__item
 		display: inline-flex
@@ -28,6 +29,9 @@
 		text-align: center
 		+btl
 		+anft
+		transform: rotateY(-90deg)
+		transform-origin: 0 50%
+		transition: .4s .4s
 	&__link
 		display: block
 		width: 100%
@@ -41,6 +45,10 @@
 		width: 46%
 		margin: 0 0 40px 20px
 		min-height: 128px
+
+		transform: rotateY(-90deg)
+		transform-origin: 0 50%
+		transition: .4s 1s
 	&__pic
 		position: relative
 		display: flex
@@ -83,3 +91,18 @@
 		bottom: -10%
 		g
 			fill: #f1f4f4
+
+
+
+@for $i from 1 through $items
+	.benefits__item:nth-of-type(#{$i})
+		transition-delay: #{$i * 0.2 + s}
+	.benefits__ben:nth-of-type(#{$i})
+		transition-delay: #{$i * 0.2 + s}
+
+.benefits.active,
+.benefits.is-active
+	.benefits__item,
+	.benefits__ben
+		transform: rotateY(0deg)
+

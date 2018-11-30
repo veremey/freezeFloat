@@ -9,9 +9,11 @@ $items: 12
 	&__list
 		font-size: 0
 		list-style-type: none
-		padding: 0
+		padding: 0 0 40px
 		margin: 0 0 -30px
 		text-align: center
+		+r(650)
+			margin: 0
 	&__item
 		position: relative
 		display: inline-block
@@ -26,6 +28,15 @@ $items: 12
 		transform: rotateY(-90deg)
 		transform-origin: 0 50%
 		transition: .4s .4s
+		+r(1200)
+			width: calc(33% - 30px)
+		+r(940)
+			width: calc(50% - 30px)
+		+r(768)
+			transform: rotateY(0deg)
+		+r(650)
+			width: 100%
+			margin-left: 0
 
 		&_picture
 			+coverdiv

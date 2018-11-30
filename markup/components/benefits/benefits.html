@@ -12,31 +12,33 @@
 			</g>
 		</svg>
 	</div>
-	<div class="layout center-text">
-		<div class="section__header">
-			<h2 class="title__section" role="heading" aria-level="2" >{{title}}</h2>
-			<p class="desc desc_s">{{desc}}</p>
+	<div class="custom-scroll">
+		<div class="layout center-text">
+			<div class="section__header">
+				<h2 class="title__section" role="heading" aria-level="2" >{{title}}</h2>
+				<p class="desc desc_s">{{desc}}</p>
+			</div>
+			<ul class="benefits__list">
+				{{#if pictureList}}
+					{{#each pictureList.ben}}
+						<li class="benefits__ben">
+							<div class="benefits__pic">
+								<img src=static/img/content/{{icon}} alt="" class="benefits__icon">
+							</div>
+							<div class="benefits__text">
+								<h3 class="title__b">{{{title}}}</h3>
+								<p class="desc_s">{{{desc}}}</p>
+							</div>
+						</li>
+					{{/each}}
+				{{else}}
+					{{#each list}}
+						<li class="benefits__item">
+							<a href="#" class="benefits__link">{{this}}</a>
+						</li>
+					{{/each}}
+				{{/if}}
+			</ul>
 		</div>
-		<ul class="benefits__list">
-			{{#if pictureList}}
-				{{#each pictureList.ben}}
-					<li class="benefits__ben">
-						<div class="benefits__pic">
-							<img src=static/img/content/{{icon}} alt="" class="benefits__icon">
-						</div>
-						<div class="benefits__text">
-							<h3 class="title__b">{{{title}}}</h3>
-							<p class="desc_s">{{{desc}}}</p>
-						</div>
-					</li>
-				{{/each}}
-			{{else}}
-				{{#each list}}
-					<li class="benefits__item">
-						<a href="#" class="benefits__link">{{this}}</a>
-					</li>
-				{{/each}}
-			{{/if}}
-		</ul>
 	</div>
 </div>

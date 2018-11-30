@@ -19,16 +19,19 @@
                 <img src="static/img/content/sauna.png" alt="subheader picture" class="circle__bg_img">
               </div>
             </div>
-            <div class="layout layout_flex">
-              <div class="layout__right">
-                <h2 class="title__main" role="heading" aria-level="2" >ABOUT US</h2>
-                <p class="desc desc_l">Begin your wellness journey at Freeze and Float Spa. It’s our philosophy to create an environment where health and wellness becomes a reality. </p>
-                <p class="desc desc_l">We offer a tranquil oasis that deepens optimal relaxation, renews peacefulness, and restores well-being. </p>
-                <p class="desc desc_l">Our guest will experience the essential rejuvenation that the mind and body deserve. </p>
+
+            <div class="custom-scroll">
+              <div class="layout layout_flex">
+                <div class="layout__right">
+                  <h2 class="title__main" role="heading" aria-level="2" >ABOUT US</h2>
+                  <p class="desc desc_l">Begin your wellness journey at Freeze and Float Spa. It’s our philosophy to create an environment where health and wellness becomes a reality. </p>
+                  <p class="desc desc_l">We offer a tranquil oasis that deepens optimal relaxation, renews peacefulness, and restores well-being. </p>
+                  <p class="desc desc_l">Our guest will experience the essential rejuvenation that the mind and body deserve. </p>
+                </div>
+                <a href="#" class="next__section js-nextSection">
+                  <img src="static/img/content/arrowDown.png" alt="to next section">
+                </a>
               </div>
-              <a href="#" class="next__section js-nextSection">
-                <img src="static/img/content/arrowDown.png" alt="to next section">
-              </a>
             </div>
           </div>
           <!-- end subheader -->
@@ -46,55 +49,61 @@
                 </g>
               </svg>
             </div>
-            <div class="layout">
-              <div class="clients__header">
-                  <h2 class="title__section" role="heading" aria-level="2">Team</h2>
-                </div>
-              <ul class="team__list">
-                <li class="team__item">
-                  <div class="team__pic team-c">
-                    <div class="team__pic_wrap">
-                      <img src="static/img/content/client1.png" alt="Katarina " class="team__img">
+
+            <div class="custom-scroll">
+              <div class="layout">
+                <div class="section__header center-text">
+                    <h2 class="title__section" role="heading" aria-level="2">Team</h2>
+                  </div>
+                <ul class="team__list">
+                  <li class="team__item">
+                    <div class="team__pic team-c">
+                      <div class="team__pic_wrap">
+                        <img src="static/img/content/client1.png" alt="Katarina " class="team__img">
+                      </div>
                     </div>
-                  </div>
-                  <div class="team__text">
-                    <h3 class="title__b">Katarina</h3>
-                    <p class="desc_l">Grew up in Chicago, IL</br>Active all my life. Played tennis through high school. Was also involved in dancing, swimming, and volleyball. (epsom salt helped with muscle recovery)</br>Was Involved in various community outreach programs </p>
-                  </div>
-                </li>
-                <li class="team__item">
-                  <div class="team__pic ">
-                    <div class="team__pic_wrap">
-                      <img src="static/img/content/client1.png" alt="Katarina " class="team__img">
+                    <div class="team__text">
+                      <h3 class="title__b">Katarina</h3>
+                      <p class="desc_l">Grew up in Chicago, IL</br>Active all my life. Played tennis through high school. Was also involved in dancing, swimming, and volleyball. (epsom salt helped with muscle recovery)</br>Was Involved in various community outreach programs </p>
                     </div>
-                  </div>
-                  <div class="team__text">
-                    <h3 class="title__b">Katarina</h3>
-                    <p class="desc_l">Grew up in Chicago, IL</br>Active all my life. Played tennis through high school. Was also involved in dancing, swimming, and volleyball. (epsom salt helped with muscle recovery)</br>Was Involved in various community outreach programs </p>
-                  </div>
-                </li>
-              </ul>
+                  </li>
+                  <li class="team__item">
+                    <div class="team__pic ">
+                      <div class="team__pic_wrap">
+                        <img src="static/img/content/client1.png" alt="Katarina " class="team__img">
+                      </div>
+                    </div>
+                    <div class="team__text">
+                      <h3 class="title__b">Katarina</h3>
+                      <p class="desc_l">Grew up in Chicago, IL</br>Active all my life. Played tennis through high school. Was also involved in dancing, swimming, and volleyball. (epsom salt helped with muscle recovery)</br>Was Involved in various community outreach programs </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
           <!-- end team -->
           {{> video/video}}
 
+          {{> footer/footer}}
         </div>
       </div>
 
-      {{> footer/footer}}
     </div>
+
 
     <script src="static/js/separate-js/barba.min.js"></script>
 
-
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbLrk_U3A3cmzluLf0JBQCKmoeODE71pE"></script>
 
-
     <script src="static/js/separate-js/jquery.min.js"></script>
+
+    <script src="static/js/separate-js/fullpage.min.js"></script>
+    <script src="static/js/separate-js/jquery.mCustomScrollbar.js"></script>
     <script src="static/js/separate-js/slick.min.js"></script>
     <script src="static/js/separate-js/custom.js"></script>
     <script src="%=static=%js/main%=hash=%%=min=%.js"></script>
+
   </body>
 
 </html>
