@@ -77,8 +77,8 @@ $new: polygon(100% 0, 20.48% 0.11%,20.48% 0.23%,20.48% 0.23%,20.48% 0.23%,20.48%
 		bottom: 0
 		width: 0%
 		transition: .4s //.4s
-		+r(768)
-			width: 50%
+		+r(850)
+			width: 60%
 		&_left
 			background-color: #fff
 			// background-color: darkcyan
@@ -87,7 +87,7 @@ $new: polygon(100% 0, 20.48% 0.11%,20.48% 0.23%,20.48% 0.23%,20.48% 0.23%,20.48%
 			z-index: -1
 			// clip-path: ellipse(26% 51% at 61% 24%)
 			// background-color: rgba(0, 255, 0, .1)
-			+r(768)
+			+r(850)
 				left: 0
 			.startscreen__img
 				// left: 100%
@@ -104,7 +104,7 @@ $new: polygon(100% 0, 20.48% 0.11%,20.48% 0.23%,20.48% 0.23%,20.48% 0.23%,20.48%
 			// background-color: rgba(255, 0, 0, .1)
 			// clip-path: ellipse(26% 51% at 39.3% 76%)
 
-			+r(768)
+			+r(850)
 				width: 60%
 			&:after
 				content: ''
@@ -138,7 +138,7 @@ $new: polygon(100% 0, 20.48% 0.11%,20.48% 0.23%,20.48% 0.23%,20.48% 0.23%,20.48%
 		z-index: -1
 		background-color: #e3f3f6
 		transition: .4s //.4s
-		+r(768)
+		+r(850)
 			width: 40%
 		&:after
 			content: ''
@@ -162,6 +162,10 @@ $new: polygon(100% 0, 20.48% 0.11%,20.48% 0.23%,20.48% 0.23%,20.48% 0.23%,20.48%
 		list-style-type: none
 		font-size: 0
 		white-space: nowrap
+		+r(850)
+			position: static
+			+trx(0)
+
 	&__item
 		display: inline-block
 		vertical-align: top
@@ -169,14 +173,15 @@ $new: polygon(100% 0, 20.48% 0.11%,20.48% 0.23%,20.48% 0.23%,20.48% 0.23%,20.48%
 		font-size: 16px
 		color: #000
 		// +anb
-		+r(768)
-			display: block
-			margin: 10px auto
-			text-align: center
+		// +r(850)
+		// 	display: block
+		// 	margin: 10px auto
+		// 	text-align: center
 		&:not(:first-child)
 			border-left: 1px solid #333
-			+r(768)
-				border: 0
+			+r(500)
+				border: none
+
 	&__link
 		font-size: 16px
 		color: #000
@@ -195,9 +200,11 @@ $new: polygon(100% 0, 20.48% 0.11%,20.48% 0.23%,20.48% 0.23%,20.48% 0.23%,20.48%
 		align-items: center
 		justify-content: space-between
 		pointer-events: none
+		+r(850)
+			z-index: 10
 		&_link
 			position: relative
-			display: flex
+			display: flex!important
 			align-items: center
 			justify-content: center
 			width: 150px
@@ -211,10 +218,17 @@ $new: polygon(100% 0, 20.48% 0.11%,20.48% 0.23%,20.48% 0.23%,20.48% 0.23%,20.48%
 			transform: scale(0)
 			+bl
 			transition: .6s 1.2s
-			+r(768)
+			+r(850)
 				width: 100px
 				height: 100px
 				border: 10px solid #e3f3f6
+				transform: scale(1)
+				transition: .6s .2s
+			+r(650)
+				width: 40px
+				height: 40px
+				border: none
+				font-size: 0
 				transform: scale(1)
 			&:after
 				content: ''
@@ -229,10 +243,10 @@ $new: polygon(100% 0, 20.48% 0.11%,20.48% 0.23%,20.48% 0.23%,20.48% 0.23%,20.48%
 				+rotate(52)
 				+tr(.6s)
 				+r(650)
-					top: -30px
-					right: -30px
-					left: -30px
-					bottom: -30px
+					top: -10px
+					right: -10px
+					left: -10px
+					bottom: -10px
 			&:hover
 				&:after
 					+rotate(152)
@@ -249,6 +263,9 @@ $new: polygon(100% 0, 20.48% 0.11%,20.48% 0.23%,20.48% 0.23%,20.48% 0.23%,20.48%
 				margin-left: 10px
 			#rightArrow
 				background-color: #333
+		.slick-disabled
+			opacity: 0
+			+tr(.4s .4s)
 
 	&-main
 		position: absolute
@@ -298,11 +315,85 @@ $new: polygon(100% 0, 20.48% 0.11%,20.48% 0.23%,20.48% 0.23%,20.48% 0.23%,20.48%
 		left: 50%
 		transform: translate(-50%, 0) scale(0)
 		transition: .4s .6s
-		+r(768)
+		+r(850)
 			font-size: 46px
 			transform: translate(-50%, 0) scale(1)
 		+r(440)
 			font-size: 32px
+
+	&-mob
+		display: block
+		min-height: 100vh
+		&__slide
+			@extend .startscreen__section
+		&__pic
+			position: relative
+			margin: 30px auto 40px
+			width: 240px
+			height: 240px
+			border-radius: 100%
+			overflow: hidden
+			&:after
+				content: ''
+				position: absolute
+				top: 20px
+				left: 20px
+				bottom: 20px
+				right: 20px
+				border-radius: 100%
+				border: 1px solid #fff
+				border-right: 1px solid $n
+				animation: rotation 30s
+				z-index: 5
+			&:before
+				content: ''
+				+coverdiv
+				background-color: rgba(102, 153, 204, .4)
+				z-index: 2
+		&__img
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			width: 100%
+			max-width: none
+			max-width: none
+		&__content
+			width: 100%
+			max-width: 320px
+			margin: 20px auto
+		&__list
+			@extend .startscreen__list
+			margin: 40px auto 30px
+		&__item
+			@extend .startscreen__item
+			text-transform: uppercase
+			+r(500)
+				display: block
+				margin: 10px auto
+				text-align: center
+
+		&__link
+			@extend .startscreen__link
+			text-transform: uppercase
+			+r(650)
+				font-size: 14px
+			+r(600)
+				font-size: 12px
+		.layout
+			justify-content: flex-start
+		.title__main
+			margin-bottom: 20px
+			+r(850)
+				font-size: 46px
+			+r(440)
+				font-size: 32px
+		.leftArrow
+			display: inline-block
+			vertical-align: top
+			height: 12px
+			margin-right: 10px
+			+scale(-1)
 
 .fp-viewing-0
 	&.add-wave

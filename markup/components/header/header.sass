@@ -9,6 +9,10 @@
 	background-color: rgba(255, 255, 255, 1)
 	z-index: 2000
 	+tr(.6s)
+	+r(850)
+		border: none
+		background-color: $n
+		+tr(.6s)
 	&:after
 		content: ''
 		position: absolute
@@ -17,6 +21,17 @@
 		right: 0
 		height: 1px
 		background-color: #e3f3f6
+		+r(850)
+			content: none
+	&.is-fixed
+		background-color: #fff
+		height: 74px
+		opacity: 1
+		.header__logo
+			top: -15px
+		.header__burger
+			top: -2px
+
 	&.page-scrolled
 		padding: 8px 0
 		.header__btn
@@ -27,10 +42,15 @@
 			height: 36px
 	&-bg
 		background-color: #fff
+	.socio,
+	.header__nav
+		margin-bottom: 50px
 
 .main-logo
 	display: inline-block
 	height: 57px
+	+r(850)
+		height: 50px
 	// width: 64px
 
 .header
@@ -40,27 +60,53 @@
 		left: 50%
 		+trx(-50%)
 		z-index: 1
+		+r(850)
+			left: 15px
+			+trx(0)
 	&__wrap
 		display: flex
 		align-items: center
 		justify-content: space-between
+		+r(850)
+			flex-direction: column
+			justify-content: center
+			position: fixed
+			top: 0
+			// right: 0
+			left: 100%
+			bottom: 0
+			width: 100vw
+			background: rgba(255, 255, 255, .9)
+			transition: .4s
+		&.is-active
+			left: 0
 	&__nav
 		position: relative
 		display: flex
 		align-items: center
 		justify-content: space-between
+		+r(850)
+			flex-direction: column
 	&__list
 		font-size: 0
 		padding: 0
 		margin: 0
 		&:first-child
 			margin-right: 90px
+			+r(850)
+				margin: 0
 		&:last-child
 			margin-left: 90px
+			+r(850)
+				margin: 0
 	&__item
 		display: inline-block
 		position: relative
 		padding: 0 10px
+		+r(850)
+			display: block
+			text-align: center
+			margin-bottom: 10px
 		&.is-active
 			.header__link
 				&:after
@@ -71,6 +117,8 @@
 		color: #555b5c
 		text-transform: uppercase
 		+tr(.4s)
+		+r(850)
+			padding: 4px
 		&:after
 			content: none
 			position: absolute
@@ -108,3 +156,63 @@
 		background-color: rgba(255, 255, 255, 1)
 		border-bottom: none
 		+tr(.6s)
+
+.header__burger
+	display: none
+	position: absolute
+	top: -6px
+	right: 15px
+	display: inline-block
+	vertical-align: top
+	width: 40px
+	height: 40px
+	cursor: pointer
+	margin: auto
+	transition: all 0.3s ease-out
+	z-index: 100
+	+r(850)
+		display: block
+	span
+		display: block
+		width: 40px
+		height: 5px
+		background-color: #000000
+		transition: all 0.3s ease-out
+		+try(18px)
+		z-index: 100
+		&::after
+			content: ' '
+			position: relative
+			display: block
+			top: 5px
+			width: 40px
+			height: 5px
+			background-color: #000000
+			transition-property: transform, top
+			transition-delay: 0s, 0.2s
+		&::before
+			position: relative
+			display: block
+			content: ' '
+			bottom: 10px
+			width: 40px
+			height: 5px
+			background-color: #000000
+			transition-property: transform, bottom
+			transition-delay: 0s, 0.2s
+	&.is-active
+		span
+			background-color: transparent
+			&::before
+				bottom: 0
+				transform: rotate(45deg)
+				transition-property: bottom, transform
+				transition-duration: 0.2s, 0.2s
+				transition-delay: 0s, 0.2s
+			&::after
+				top: -5px
+				transform: rotate(-45deg)
+				transition-duration: 0.2s, 0.2s
+				transition-property: top, transform
+				transition-delay: 0s, 0.2s
+

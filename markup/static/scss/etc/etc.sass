@@ -2,11 +2,20 @@
 	+r(1024)
 		order: 1
 .md-order-2
-	+r(768)
+	+r(850)
 		order: 2
 
 .md-12
-	+r(768)
+	+r(850)
 		width: 100%
+
+.hide
+	&-mob
+		+r(850)
+			display: none
+
+.show
+	&-desktop
+		display: block
 
 

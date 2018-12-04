@@ -31,14 +31,11 @@ var ExpandTransition = Barba.BaseTransition.extend({
     var $el = $(this.newContainer);
 
     $(this.oldContainer).hide();
-
     $el.css({
       visibility : 'visible',
       opacity : 0
     });
-
     $el.animate({ opacity: 1 }, 400, function() {
-
       _this.done();
     });
   },
@@ -59,9 +56,7 @@ var ExpandTransition = Barba.BaseTransition.extend({
   	$(window).scrollTop(0);
   	document.body.scrollTop = 0;
 
-
   	reloadDoc();
-
     this.done();
   }
 });
@@ -278,10 +273,23 @@ function reloadDoc() {
 	}
 
 	$(document).ready(function () {
+    /* --- header menu mob ---*/
+    $('.header__burger').click(function() {
+      $(this).toggleClass('is-active');
+      $('.header__wrap').toggleClass('is-active');
+    });
+    $(document).on('scroll', function(){
+      if($(document).width() <= 850) {
+        $('.page-header').addClass('is-fixed');
+      } else {
+        $('.page-header').removeClass('is-fixed');
+      }
+    });
+    /*-----------------------------------------------------------*/
 
     /* --- full page scroll ---*/
     /*-----------------------------------------------------------*/
-    if($(document).width() > 768){
+    if($(document).width() > 850){
       $('.barba-container').fullpage({
           //options here
           autoScrolling: true,
@@ -293,8 +301,13 @@ function reloadDoc() {
 
           afterLoad: function(anchorLink, index){
             var thisClass = $(this).attr('class');
+            var hasScrollBar = $(this).find('.custom-scroll');
 
-            toPosScrollbar(0, 0);
+            if(!$(this).hasClass('mCS_no_scrollbar')) {
+              toPosScrollbar(0, 0);
+            }
+
+            // toPosScrollbar(0, 0);
 
 
             if($(this).hasClass('page-footer')){
@@ -399,6 +412,22 @@ function reloadDoc() {
     });
 
     /*-----------------------------------------------------------*/
+
+    /* --- starscreen mobile ---*/
+    if($('.startscreen-mob__slider').length){
+      $('.startscreen-mob__slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        initialSlide: 1,
+        focusOnSelect: true,
+        infinite: false,
+        prevArrow: '.js-go-left',
+        nextArrow: '.js-go-right',
+      });
+    }
+
+    /*-----------------------------------------------------------*/
+
 
     /* --- fixed prefooter animation ---*/
     if($('.page-footer').hasClass('active')){
