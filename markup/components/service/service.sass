@@ -116,39 +116,33 @@ $items: 12
 	.service__item
 		&:nth-child(2n)
 			margin-top: 5%
+			.service__item_footer:before
+				background-position-x: 80%
+			&:hover
+				.service__item_footer:before
+					background-position-x: 0%
 		&:nth-child(3n)
 			margin-top: 2%
 		&:nth-child(4n)
 			margin-top: 6%
+		&:hover
+			.service__item_footer:before
+				background-position-x: 80%
 		&_footer
 			background-color: #fff
 			padding: 26px
-			// &:before
-			// 	content: ''
-			// 	position: absolute
-			// 	bottom: 2%
-			// 	left: 5%
-			// 	background-color: #fff
-			// 	width: 53%
-			// 	transform: rotate(188deg)
-			// 	height: 144%
-			// 	border-radius: 200% 202%/233% 208%
-			// 	z-index: -1
-			// 	+tr(.8s)
-			// &:after
-			// 	content: ''
-			// 	position: absolute
-			// 	bottom: 20%
-			// 	left: 80%
-			// 	background-color: #fff
-			// 	width: 53%
-			// 	transform: rotate(160deg)
-			// 	height: 100%
-			// 	border-radius: 30% 100%/6% 100%
-			// 	z-index: -1
-			// 	+tr(.8s)
-			// &:hover:before
-			// 	left: 80%
+			&:before
+				content: ''
+				position: absolute
+				bottom: 100%
+				left: 0
+				right: 0
+				height: 30px
+				background-image: url('../img/content/wave-service.png')
+				background-size: 160% 100%
+				background-position-x: 0%
+				+tr(.4s)
+
 
 		.link__more
 			display: flex

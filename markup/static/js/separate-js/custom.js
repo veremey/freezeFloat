@@ -15,6 +15,9 @@ var ExpandTransition = Barba.BaseTransition.extend({
   fadeOut: function() {
   	$('.page').addClass('add-wave');
 
+    $('.header__burger').toggleClass('is-active');
+    $('.header__wrap').toggleClass('is-active');
+
   	barbaShort = setTimeout(function() {
     		$('.page').removeClass('add-wave');
     		$('.page').addClass('after-wave');
@@ -31,6 +34,7 @@ var ExpandTransition = Barba.BaseTransition.extend({
     var $el = $(this.newContainer);
 
     $(this.oldContainer).hide();
+
     $el.css({
       visibility : 'visible',
       opacity : 0
@@ -61,12 +65,13 @@ var ExpandTransition = Barba.BaseTransition.extend({
   }
 });
 
-Barba.Pjax.getTransition = function() {
-  return ExpandTransition;
-};
+if($(document).width() > 850) {
+  Barba.Pjax.getTransition = function() {
+    return ExpandTransition;
+  };
 
-Barba.Pjax.start();
-
+  Barba.Pjax.start();
+}
 // $('body, html').scrollTop(0);
 /* --- Map ---*/
 /*-----------------------------------------------------------*/
@@ -274,13 +279,19 @@ function reloadDoc() {
 
 	$(document).ready(function () {
     /* --- header menu mob ---*/
+
     $('.header__burger').click(function() {
       $(this).toggleClass('is-active');
       $('.header__wrap').toggleClass('is-active');
     });
+
     $(document).on('scroll', function(){
       if($(document).width() <= 850) {
-        $('.page-header').addClass('is-fixed');
+        if($(window).scrollTop() > 10){
+          $('.page-header').addClass('is-fixed');
+        } else {
+          $('.page-header').removeClass('is-fixed');
+        }
       } else {
         $('.page-header').removeClass('is-fixed');
       }
@@ -290,9 +301,10 @@ function reloadDoc() {
     /* --- full page scroll ---*/
     /*-----------------------------------------------------------*/
     if($(document).width() > 850){
+      $('.startscreen-mob').remove();
+
       $('.barba-container').fullpage({
-          //options here
-          autoScrolling: true,
+          scrollingSpeed: 900,
           onLeave: function(index, nextIndex, direction){
             if(direction == 'up') {
               $(this).removeClass('is-active');
@@ -300,19 +312,24 @@ function reloadDoc() {
           },
 
           afterLoad: function(anchorLink, index){
+            $.fn.fullpage.setAllowScrolling(false);
+
             var thisClass = $(this).attr('class');
             var hasScrollBar = $(this).find('.custom-scroll');
 
             if(!$(this).hasClass('mCS_no_scrollbar')) {
-              toPosScrollbar(0, 0);
+              toPosScrollbar(0, 5);
             }
 
             // toPosScrollbar(0, 0);
 
-
             if($(this).hasClass('page-footer')){
               $(this).prev('.section').addClass('is-active');
             }
+
+            setTimeout(function(){
+              $.fn.fullpage.setAllowScrolling(true);
+            }, 800);
 
           }
       });
@@ -533,6 +550,64 @@ function reloadDoc() {
 					relY = e.pageY - parentOffset.top;
 				$(this).find('em').css({top:relY, left:relX})
 			});
+
+     /* --- doc resize  ---*/
+    $('document').resize(function(){
+      if($(document).width() > 850){
+        $('.barba-container').fullpage({
+            //options here
+            autoScrolling: true,
+            onLeave: function(index, nextIndex, direction){
+              if(direction == 'up') {
+                $(this).removeClass('is-active');
+              }
+            },
+
+            afterLoad: function(anchorLink, index){
+              var thisClass = $(this).attr('class');
+              var hasScrollBar = $(this).find('.custom-scroll');
+
+              if(!$(this).hasClass('mCS_no_scrollbar')) {
+                toPosScrollbar(0, 0);
+              }
+
+              // toPosScrollbar(0, 0);
+
+
+              if($(this).hasClass('page-footer')){
+                $(this).prev('.section').addClass('is-active');
+              }
+
+            }
+        });
+
+        $('.custom-scroll').each(function(index, el) {
+          var $section_wrap = $(this);
+
+          var $scrollbar__custom;
+          $section_wrap.mCustomScrollbar({
+            scrollInertia: 200,
+            mouseWheel:{ preventDefault: false },
+            callbacks: {
+              onInit: function() {
+                $scrollbar__custom = $(this).find('.mCSB_container');
+              },
+              onTotalScroll: function() {
+                toNextSlide();
+              },
+              onTotalScrollBack: function() {
+                toPrevSlide();
+              },
+              whileScrolling: function() {
+                var scrollTop = -parseFloat($scrollbar__custom.css('top').slice(0, -2));
+              }
+            }
+          });
+        });
+      }
+    });
+     /*-----------------------------------------------------------*/
+
 
 
 	/*--      --*/

@@ -54,7 +54,7 @@ var data = {header: {
 		inner: 'header-inner',
 		item: [
 			{list: [
-				{ link: 'devfreeze', name: 'Why freeze', active: 'is-active'},
+				{ link: 'freeze', name: 'Why freeze', active: 'is-active'},
 				{ link: 'float-service', name: 'Services'},
 			]},
 			{list: [
@@ -67,7 +67,7 @@ var data = {header: {
 		inner: 'header-inner',
 		item: [
 			{list: [
-				{ link: 'devfreeze', name: 'Why freeze'},
+				{ link: 'freeze', name: 'Why freeze'},
 				{ link: 'float-service', name: 'Services'},
 			]},
 			{list: [

@@ -172,7 +172,17 @@ p
 		width: 50%
 		padding: 90px 20px 60px 10%
 		margin-left: auto
-
+		+r(850)
+			// position: absolute
+			bottom: 80px
+			left: 40px
+			right: 40px
+			width: auto
+			background-color: #fff
+			padding: 30px 20px 30px
+		.title__main
+			+r(850)
+				margin-bottom: .8em
 
 .section
 	position: relative
@@ -182,6 +192,8 @@ p
 		min-height: auto
 	&__header
 		margin-bottom: 80px
+		+r(768)
+			margin-bottom: 40px
 		.title__section
 			text-transform: uppercase
 		.desc
@@ -306,10 +318,21 @@ p
 	left: 0%
 	width: 70%
 	height: 100%
+	+r(1100)
+		width: 50%
+	+r(850)
+		width: 100%
 	img
 		min-height: 100%
 		max-width: 100%
 		clip-path: circle(80% at 0% 50%)
+		+r(1100)
+			clip-path: circle(70% at 0% 50%)
+		+r(1024)
+			clip-path: circle(60% at 0% 50%)
+		+r(850)
+			clip-path: none
+			width: 100%
 
 .team
 	&__list
@@ -327,6 +350,11 @@ p
 		width: 48%
 		transform: translate3d(0, 0, 0) scale(0)
 		transition: .6s
+		+r(850)
+			transform: translate3d(0, 0, 0) scale(1)
+		+r(768)
+			width: 100%
+			margin: 20px 0
 		.team-c
 			position: relative
 			&:after
@@ -340,6 +368,11 @@ p
 				border-bottom-color: transparent
 				border-radius: 100%
 				animation: rotation 40s
+				+r(768)
+					top: -80px
+					left: -80px
+					bottom: -80px
+					right: -80px
 	&__pic
 		position: relative
 		margin: 0 auto 30px

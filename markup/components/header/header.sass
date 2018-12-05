@@ -30,7 +30,7 @@
 		.header__logo
 			top: -15px
 		.header__burger
-			top: -2px
+			top: -10px
 
 	&.page-scrolled
 		padding: 8px 0
@@ -44,7 +44,8 @@
 		background-color: #fff
 	.socio,
 	.header__nav
-		margin-bottom: 50px
+		+r(850)
+			margin-bottom: 50px
 
 .main-logo
 	display: inline-block
@@ -106,7 +107,7 @@
 		+r(850)
 			display: block
 			text-align: center
-			margin-bottom: 10px
+			margin-bottom: 15px
 		&.is-active
 			.header__link
 				&:after
@@ -156,9 +157,10 @@
 		background-color: rgba(255, 255, 255, 1)
 		border-bottom: none
 		+tr(.6s)
+		+r(850)
+			height: 86px
 
 .header__burger
-	display: none
 	position: absolute
 	top: -6px
 	right: 15px
@@ -170,6 +172,7 @@
 	margin: auto
 	transition: all 0.3s ease-out
 	z-index: 100
+	display: none
 	+r(850)
 		display: block
 	span

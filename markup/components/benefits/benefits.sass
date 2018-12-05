@@ -17,6 +17,9 @@
 		margin: 0px 0 0 -20px
 		// margin: 90px 0 0 -20px
 		text-align: left
+		+r(420)
+			width: 100%
+			margin: 0
 	&__item
 		display: inline-flex
 		align-items: center
@@ -32,6 +35,14 @@
 		transform: rotateY(-90deg)
 		transform-origin: 0 50%
 		transition: .4s .4s
+		+r(850)
+			transform: rotateY(0deg)
+		+r(768)
+			width: calc(33.3333% - 20px)
+		+r(650)
+			width: calc(50% - 20px)
+		+r(420)
+			width: 100%
 	&__link
 		display: block
 		width: 100%
@@ -49,6 +60,10 @@
 		transform: rotateY(-90deg)
 		transform-origin: 0 50%
 		transition: .4s 1s
+		+r(850)
+			transform: rotateY(0deg)
+		+r(768)
+			width: 100%
 	&__pic
 		position: relative
 		display: flex
