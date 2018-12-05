@@ -3,7 +3,9 @@ var data = {header: {
 		item: [
 			{list: [
 				{ link: 'float', name: 'Why Float'},
-				{ link: 'float-service', name: 'Services'},
+				{ link: 'float-service', name: 'Services',
+				submenu: ['Delivery', 'Cleaning']
+			},
 			]},
 			{list: [
 				{ link: 'about', name: 'about'},
@@ -16,7 +18,8 @@ var data = {header: {
 		item: [
 			{list: [
 				{ link: 'float', name: 'Why Float'},
-				{ link: 'float-service', name: 'Services'},
+				{ link: 'float-service', name: 'Services',
+				submenu: ['Delivery', 'Cleaning']},
 			]},
 			{list: [
 				{ link: 'about', name: 'about', active: 'is-active'},
@@ -29,7 +32,8 @@ var data = {header: {
 		item: [
 			{list: [
 				{ link: 'float', name: 'Why Float'},
-				{ link: 'float-service', name: 'Services', active: 'is-active'},
+				{ link: 'float-service', name: 'Services', active: 'is-active',
+				submenu: ['Delivery', 'Cleaning']},
 			]},
 			{list: [
 				{ link: 'about', name: 'about'},
@@ -42,7 +46,8 @@ var data = {header: {
 		item: [
 			{list: [
 				{ link: 'float', name: 'Why Float', active: 'is-active'},
-				{ link: 'float-service', name: 'Services'},
+				{ link: 'float-service', name: 'Services',
+				submenu: ['Delivery', 'Cleaning']},
 			]},
 			{list: [
 				{ link: 'about', name: 'about'},
@@ -55,7 +60,8 @@ var data = {header: {
 		item: [
 			{list: [
 				{ link: 'freeze', name: 'Why freeze', active: 'is-active'},
-				{ link: 'float-service', name: 'Services'},
+				{ link: 'float-service', name: 'Services',
+				submenu: ['Delivery', 'Cleaning']},
 			]},
 			{list: [
 				{ link: 'about', name: 'about'},
@@ -68,7 +74,8 @@ var data = {header: {
 		item: [
 			{list: [
 				{ link: 'freeze', name: 'Why freeze'},
-				{ link: 'float-service', name: 'Services'},
+				{ link: 'float-service', name: 'Services',
+				submenu: ['Delivery', 'Cleaning']},
 			]},
 			{list: [
 				{ link: 'about', name: 'about'},

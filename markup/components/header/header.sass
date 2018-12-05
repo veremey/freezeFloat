@@ -101,9 +101,10 @@
 			+r(850)
 				margin: 0
 	&__item
+		position: relative
 		display: inline-block
 		position: relative
-		padding: 0 10px
+		padding: 14px 10px
 		+r(850)
 			display: block
 			text-align: center
@@ -219,3 +220,51 @@
 				transition-property: top, transform
 				transition-delay: 0s, 0.2s
 
+.submenu
+	position: absolute
+	top: 100%
+	left: 0
+	font-size: 0
+	padding: 16px 10px
+	margin: 0
+	background-color: #e3f2f5
+	box-shadow: 0 2px 2px rgba(51, 51, 51, .2)
+	z-index: 1
+	opacity: 1
+	transform-origin: 0 0
+	transform: rotateX(90deg)
+	+tr(.8s)
+	&__item
+		display: inline-block
+		vertical-align: top
+		margin-bottom: 10px
+	&__link
+		position: relative
+		font-size: 16px
+		color: #555b5c
+		// text-transform: uppercase
+		+tr(.4s)
+		+r(850)
+			padding: 4px
+		&:after
+			content: ''
+			position: absolute
+			top: 120%
+			left: 30%
+			right: 30%
+			height: 1px
+			opacity: 0
+			background-color: #333
+			+tr(.4s)
+		&:hover
+			+try(5px)
+			color: #333
+			&:after
+				content: ''
+				opacity: 1
+
+.has-submenu
+	&:hover
+		.submenu
+			opacity: 1
+			transform: rotateX(0)

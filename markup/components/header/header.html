@@ -62,9 +62,22 @@
 				{{#each item}}
 					<ul class="header__list">
 						{{#each list}}
-							<li class="header__item {{#if active}}{{this.active}}{{/if}}">
-								<a href="{{this.link}}.html" class="header__link"> {{this.name}} </a>
-							</li>
+							{{#if submenu}}
+								<li class="header__item has-submenu {{#if active}}{{this.active}}{{/if}}">
+									<a href="{{this.link}}.html" class="header__link"> {{this.name}} </a>
+									<ul class="submenu">
+										{{#each submenu}}
+											<li class="submenu__item">
+												<a href="#" class="submenu__link">{{this}}</a>
+											</li>
+										{{/each}}
+									</ul>
+								</li>
+							{{else}}
+								<li class="header__item {{#if active}}{{this.active}}{{/if}}">
+									<a href="{{this.link}}.html" class="header__link"> {{this.name}} </a>
+								</li>
+							{{/if}}
 						{{/each}}
 					</ul>
 				{{/each}}

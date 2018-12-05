@@ -88,7 +88,9 @@ _template: {
 		item: [
 			{list: [
 				{ link: 'float', name: 'Why Float'},
-				{ link: 'float-service', name: 'Services'},
+				{ link: 'float-service', name: 'Services',
+				submenu: ['Delivery', 'Cleaning']
+			},
 			]},
 			{list: [
 				{ link: 'about', name: 'about'},
@@ -101,7 +103,8 @@ _template: {
 		item: [
 			{list: [
 				{ link: 'float', name: 'Why Float'},
-				{ link: 'float-service', name: 'Services'},
+				{ link: 'float-service', name: 'Services',
+				submenu: ['Delivery', 'Cleaning']},
 			]},
 			{list: [
 				{ link: 'about', name: 'about', active: 'is-active'},
@@ -114,7 +117,8 @@ _template: {
 		item: [
 			{list: [
 				{ link: 'float', name: 'Why Float'},
-				{ link: 'float-service', name: 'Services', active: 'is-active'},
+				{ link: 'float-service', name: 'Services', active: 'is-active',
+				submenu: ['Delivery', 'Cleaning']},
 			]},
 			{list: [
 				{ link: 'about', name: 'about'},
@@ -127,7 +131,8 @@ _template: {
 		item: [
 			{list: [
 				{ link: 'float', name: 'Why Float', active: 'is-active'},
-				{ link: 'float-service', name: 'Services'},
+				{ link: 'float-service', name: 'Services',
+				submenu: ['Delivery', 'Cleaning']},
 			]},
 			{list: [
 				{ link: 'about', name: 'about'},
@@ -140,7 +145,8 @@ _template: {
 		item: [
 			{list: [
 				{ link: 'freeze', name: 'Why freeze', active: 'is-active'},
-				{ link: 'float-service', name: 'Services'},
+				{ link: 'float-service', name: 'Services',
+				submenu: ['Delivery', 'Cleaning']},
 			]},
 			{list: [
 				{ link: 'about', name: 'about'},
@@ -153,7 +159,8 @@ _template: {
 		item: [
 			{list: [
 				{ link: 'freeze', name: 'Why freeze'},
-				{ link: 'float-service', name: 'Services'},
+				{ link: 'float-service', name: 'Services',
+				submenu: ['Delivery', 'Cleaning']},
 			]},
 			{list: [
 				{ link: 'about', name: 'about'},
