@@ -456,7 +456,7 @@ function reloadDoc() {
 		$('.header__item').on('click', function() {
 			$('.header__item').removeClass('is-active');
 			// $(this).addClass('is-active');
-			var elHeight = $(this).height();
+			var elHeight = $(this).outerHeight() - 12;
 			var elWidthHalf = $(this).outerWidth() / 2;
 			var top = $(this).offset().top - $(this).offsetParent().offset().top + elHeight + 4;
 			var left = $(this).offset().left - $(this).offsetParent().offset().left + elWidthHalf / 2;

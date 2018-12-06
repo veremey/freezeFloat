@@ -11,7 +11,7 @@ var data = {resort: {
 		first: 'picture',
 		second: 'content',
 		picture: 'static/img/content/inWater.png',
-		title: 'THE</br>FOAT',
+		title: 'THE</br>FlOAT',
 		desc: ['Regularly floating not only reduces health problems it also boosts the following mind and body improvements.']
 	},
 	sauna: {

@@ -318,20 +318,25 @@ p
 	left: 0%
 	width: 70%
 	height: 100%
+	border-radius: 0 100% 100% 0
+	overflow: hidden
 	+r(1100)
 		width: 50%
 	+r(850)
 		width: 100%
 	img
 		min-height: 100%
-		max-width: 100%
-		clip-path: circle(80% at 0% 50%)
-		+r(1100)
-			clip-path: circle(70% at 0% 50%)
-		+r(1024)
-			clip-path: circle(60% at 0% 50%)
+		// max-width: 100%
+		min-width: 100%
+		+vcenter
+
+		// clip-path: circle(80% at 0% 50%)
+		// +r(1100)
+		// 	clip-path: circle(70% at 0% 50%)
+		// +r(1024)
+		// 	clip-path: circle(60% at 0% 50%)
 		+r(850)
-			clip-path: none
+			// clip-path: none
 			width: 100%
 
 .team

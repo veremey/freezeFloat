@@ -87,9 +87,9 @@ _template: {
 	main: {
 		item: [
 			{list: [
-				{ link: 'float', name: 'Why Float'},
+				{ link: 'float', name: 'Float'},
 				{ link: 'float-service', name: 'Services',
-				submenu: ['Delivery', 'Cleaning']
+				submenu: ['Float', 'freeze', 'infrared sauna']
 			},
 			]},
 			{list: [
@@ -102,9 +102,9 @@ _template: {
 		inner: 'header-inner',
 		item: [
 			{list: [
-				{ link: 'float', name: 'Why Float'},
+				{ link: 'float', name: 'Float'},
 				{ link: 'float-service', name: 'Services',
-				submenu: ['Delivery', 'Cleaning']},
+				submenu: ['Float', 'freeze', 'infrared sauna']},
 			]},
 			{list: [
 				{ link: 'about', name: 'about', active: 'is-active'},
@@ -116,9 +116,9 @@ _template: {
 		inner: 'header-inner',
 		item: [
 			{list: [
-				{ link: 'float', name: 'Why Float'},
+				{ link: 'float', name: 'Float'},
 				{ link: 'float-service', name: 'Services', active: 'is-active',
-				submenu: ['Delivery', 'Cleaning']},
+				submenu: ['Float', 'freeze', 'infrared sauna']},
 			]},
 			{list: [
 				{ link: 'about', name: 'about'},
@@ -130,9 +130,9 @@ _template: {
 		inner: 'header-inner',
 		item: [
 			{list: [
-				{ link: 'float', name: 'Why Float', active: 'is-active'},
+				{ link: 'float', name: 'Float', active: 'is-active'},
 				{ link: 'float-service', name: 'Services',
-				submenu: ['Delivery', 'Cleaning']},
+				submenu: ['Float', 'freeze', 'infrared sauna']},
 			]},
 			{list: [
 				{ link: 'about', name: 'about'},
@@ -144,9 +144,9 @@ _template: {
 		inner: 'header-inner',
 		item: [
 			{list: [
-				{ link: 'freeze', name: 'Why freeze', active: 'is-active'},
+				{ link: 'freeze', name: 'freeze', active: 'is-active'},
 				{ link: 'float-service', name: 'Services',
-				submenu: ['Delivery', 'Cleaning']},
+				submenu: ['Float', 'freeze', 'infrared sauna']},
 			]},
 			{list: [
 				{ link: 'about', name: 'about'},
@@ -158,9 +158,9 @@ _template: {
 		inner: 'header-inner',
 		item: [
 			{list: [
-				{ link: 'freeze', name: 'Why freeze'},
+				{ link: 'freeze', name: 'freeze'},
 				{ link: 'float-service', name: 'Services',
-				submenu: ['Delivery', 'Cleaning']},
+				submenu: ['Float', 'freeze', 'infrared sauna']},
 			]},
 			{list: [
 				{ link: 'about', name: 'about'},
@@ -183,7 +183,7 @@ _template: {
 		first: 'picture',
 		second: 'content',
 		picture: 'static/img/content/inWater.png',
-		title: 'THE</br>FOAT',
+		title: 'THE</br>FlOAT',
 		desc: ['Regularly floating not only reduces health problems it also boosts the following mind and body improvements.']
 	},
 	sauna: {
