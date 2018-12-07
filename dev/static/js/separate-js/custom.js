@@ -300,6 +300,7 @@ function reloadDoc() {
 
     /* --- full page scroll ---*/
     /*-----------------------------------------------------------*/
+    /* -- hide fullpage
     if($(document).width() > 850){
       $('.startscreen-mob').remove();
 
@@ -372,6 +373,9 @@ function reloadDoc() {
         scrollInertia: scrollInertia
       });
     }
+
+    ## end hide fullPage scroll */
+
     /* --- startscreen nav ---*/
     $('.js-to-left').click(function(e){
       e.preventDefault();
@@ -507,20 +511,21 @@ function reloadDoc() {
 		$('.clients__face').on('afterChange', function(event, slick, currentSlide){
 			var nextHiddenSlide = currentSlide + 3;
 			var prevHiddenSlide = currentSlide - 2;
-			var nextVisibleSlide = currentSlide + 2;
-			var prevVisibleSlide = currentSlide - 1;
 
-			$('[data-slick-index="'+nextHiddenSlide+'"]').addClass('is-hidden');
+      $('[data-slick-index="'+nextHiddenSlide+'"]').addClass('is-hidden');
 			$('[data-slick-index="'+prevHiddenSlide+'"]').addClass('is-hidden');
-			$('[data-slick-index="'+nextVisibleSlide+'"]').removeClass('is-hidden');
-			$('[data-slick-index="'+prevVisibleSlide +'"]').removeClass('is-hidden');
 		});
 
 		$('.clients__face').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+      var nextHiddenSlide = currentSlide + 3;
+      var prevHiddenSlide = currentSlide - 3;
 			var nextVisibleSlide = currentSlide + 2;
 			var prevVisibleSlide = currentSlide - 2;
 
-			$('[data-slick-index="'+prevVisibleSlide +'"]').removeClass('is-hidden');
+      $('[data-slick-index="'+nextHiddenSlide+'"]').addClass('is-hidden');
+      $('[data-slick-index="'+prevHiddenSlide+'"]').addClass('is-hidden');
+      $('[data-slick-index="'+prevVisibleSlide +'"]').removeClass('is-hidden');
+			$('[data-slick-index="'+nextVisibleSlide +'"]').removeClass('is-hidden');
 		});
 
 		/*-- to the next section ---*/
@@ -607,6 +612,18 @@ function reloadDoc() {
       }
     });
      /*-----------------------------------------------------------*/
+     /* --- contact form ---*/
+     $('.formContact__input, .formContact__text').change(function () {
+        var $this = $(this);
+
+        if( $this.val().length > 0 ) {
+          $this.addClass('has-content');
+        } else {
+          $this.removeClass('has-content');
+        }
+      });
+     /*-----------------------------------------------------------*/
+
 
 
 

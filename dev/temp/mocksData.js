@@ -89,7 +89,18 @@ _template: {
 			{list: [
 				{ link: 'float', name: 'Float'},
 				{ link: 'float-service', name: 'Services',
-				submenu: ['Float', 'freeze', 'infrared sauna']
+				submenu: [
+					{
+						name: 'Float',
+						link: 'float'
+					}, {
+						name: 'freeze',
+						link: 'freeze'
+					}, {
+						name: 'infrared sauna',
+						link: 'sauna'
+					}
+				]
 			},
 			]},
 			{list: [
@@ -104,7 +115,19 @@ _template: {
 			{list: [
 				{ link: 'float', name: 'Float'},
 				{ link: 'float-service', name: 'Services',
-				submenu: ['Float', 'freeze', 'infrared sauna']},
+				submenu: [
+					{
+						name: 'Float',
+						link: 'float'
+					}, {
+						name: 'freeze',
+						link: 'freeze'
+					}, {
+						name: 'infrared sauna',
+						link: 'sauna'
+					}
+				]
+				},
 			]},
 			{list: [
 				{ link: 'about', name: 'about', active: 'is-active'},
@@ -118,7 +141,19 @@ _template: {
 			{list: [
 				{ link: 'float', name: 'Float'},
 				{ link: 'float-service', name: 'Services', active: 'is-active',
-				submenu: ['Float', 'freeze', 'infrared sauna']},
+				submenu: [
+					{
+						name: 'Float',
+						link: 'float'
+					}, {
+						name: 'freeze',
+						link: 'freeze'
+					}, {
+						name: 'infrared sauna',
+						link: 'sauna'
+					}
+				]
+				},
 			]},
 			{list: [
 				{ link: 'about', name: 'about'},
@@ -132,7 +167,19 @@ _template: {
 			{list: [
 				{ link: 'float', name: 'Float', active: 'is-active'},
 				{ link: 'float-service', name: 'Services',
-				submenu: ['Float', 'freeze', 'infrared sauna']},
+				submenu: [
+					{
+						name: 'Float',
+						link: 'float'
+					}, {
+						name: 'freeze',
+						link: 'freeze'
+					}, {
+						name: 'infrared sauna',
+						link: 'sauna'
+					}
+				]
+				},
 			]},
 			{list: [
 				{ link: 'about', name: 'about'},
@@ -144,9 +191,21 @@ _template: {
 		inner: 'header-inner',
 		item: [
 			{list: [
-				{ link: 'freeze', name: 'freeze', active: 'is-active'},
+				{ link: 'float', name: 'float'},
 				{ link: 'float-service', name: 'Services',
-				submenu: ['Float', 'freeze', 'infrared sauna']},
+				submenu: [
+					{
+						name: 'Float',
+						link: 'float'
+					}, {
+						name: 'freeze',
+						link: 'freeze'
+					}, {
+						name: 'infrared sauna',
+						link: 'sauna'
+					}
+				]
+				},
 			]},
 			{list: [
 				{ link: 'about', name: 'about'},
@@ -158,9 +217,21 @@ _template: {
 		inner: 'header-inner',
 		item: [
 			{list: [
-				{ link: 'freeze', name: 'freeze'},
+				{ link: 'float', name: 'float'},
 				{ link: 'float-service', name: 'Services',
-				submenu: ['Float', 'freeze', 'infrared sauna']},
+				submenu: [
+					{
+						name: 'Float',
+						link: 'float'
+					}, {
+						name: 'freeze',
+						link: 'freeze'
+					}, {
+						name: 'infrared sauna',
+						link: 'sauna'
+					}
+				]
+				},
 			]},
 			{list: [
 				{ link: 'about', name: 'about'},

@@ -74,13 +74,11 @@ $new: polygon(100% 0, 20.48% 0.11%,20.48% 0.23%,20.48% 0.23%,20.48% 0.23%,20.48%
 		position: absolute
 		top: 0
 		bottom: 0
-		width: 0%
+		width: 60%
 		transition: .4s //.4s
-		+r(850)
-			width: 60%
 		&_left
 			background-color: #fff
-			left: -300px
+			// left: -300px
 			z-index: -1
 			// clip-path: ellipse(26% 51% at 61% 24%)
 			// background-color: rgba(0, 255, 0, .1)
@@ -128,8 +126,8 @@ $new: polygon(100% 0, 20.48% 0.11%,20.48% 0.23%,20.48% 0.23%,20.48% 0.23%,20.48%
 		position: absolute
 		top: 0
 		right: 0
-		// width: 40%
-		width: 0
+		width: 40%
+		// width: 0
 		height: 100vh
 		z-index: -1
 		background-color: #e3f3f6
@@ -338,10 +336,10 @@ $new: polygon(100% 0, 20.48% 0.11%,20.48% 0.23%,20.48% 0.23%,20.48% 0.23%,20.48%
 			font-size: 32px
 
 	&-mob
-		display: none!important
-		+r(850)
-			display: block!important
-			min-height: 100vh
+		display: block!important
+		min-height: 100vh
+		// display: none!important
+		// +r(850)
 		&__slide
 			@extend .startscreen__section
 		&__pic
