@@ -234,6 +234,9 @@
 	transform-origin: 0 0
 	transform: rotateX(90deg)
 	+tr(.8s)
+	+r(850)
+		left: 50%
+		transform: rotateX(90deg) translateX(-50%)
 	&__item
 		// display: inline-block
 		vertical-align: top
@@ -266,6 +269,32 @@
 
 .has-submenu
 	&:hover
+		span:after
+			transform: translate(-50%, -50%) rotate(0deg)
 		.submenu
 			opacity: 1
-			transform: rotateX(0)
+			transform: translateX(-50%) rotateX(0)
+	span
+		+r(850)
+			&:before
+				content: ''
+				position: absolute
+				top: 50%
+				left: 110%
+				right: 0
+				height: 2px
+				width: 14px
+				background-color: #555b5c;
+				transform: translate(-50%, -50%)
+			&:after
+				content: ''
+				position: absolute
+				top: 50%
+				left: 110%
+				right: 0
+				height: 2px
+				width: 14px
+				background-color: #555b5c;
+				transform: translate(-50%, -50%) rotate(90deg)
+				+tr(.4s)
+

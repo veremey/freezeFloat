@@ -280,9 +280,11 @@ function reloadDoc() {
 	$(document).ready(function () {
     /* --- header menu mob ---*/
 
-    $('.header__burger').click(function() {
+    $('.header__burger').on('touchstart', function(e) {
+      e.stopPropagation();
       $(this).toggleClass('is-active');
       $('.header__wrap').toggleClass('is-active');
+      console.log('click');
     });
 
     $(document).on('scroll', function(){
@@ -447,8 +449,16 @@ function reloadDoc() {
       });
     }
 
+    $('.startscreen-mob__slider').on('afterChange', function(event, slick, currentSlide){
+      if(currentSlide == 0){
+        $('.startscreen__nav').addClass('startscreen-first');
+      } else if(currentSlide == 2){
+        $('.startscreen__nav').addClass('startscreen-last');
+      } else {
+        $('.startscreen__nav').removeClass('startscreen-first startscreen-last');
+      }
+    });
     /*-----------------------------------------------------------*/
-
 
     /* --- fixed prefooter animation ---*/
     if($('.page-footer').hasClass('active')){

@@ -214,8 +214,7 @@ $new: polygon(100% 0, 20.48% 0.11%,20.48% 0.23%,20.48% 0.23%,20.48% 0.23%,20.48%
 		align-items: center
 		justify-content: space-between
 		pointer-events: none
-		+r(850)
-			z-index: 10
+		z-index: 10
 		&_link
 			position: relative
 			display: flex!important
@@ -229,15 +228,15 @@ $new: polygon(100% 0, 20.48% 0.11%,20.48% 0.23%,20.48% 0.23%,20.48% 0.23%,20.48%
 			color: #000
 			font-size: 17px
 			letter-spacing: .12em
-			transform: scale(0)
+			// transform: scale(0)
 			+bl
-			transition: .6s 1.2s
+			transition: .6s
 			+r(850)
 				width: 100px
 				height: 100px
 				border: 10px solid #e3f3f6
 				transform: scale(1)
-				transition: .6s .2s
+				transition: .6s
 			+r(650)
 				width: 40px
 				height: 40px
@@ -279,7 +278,17 @@ $new: polygon(100% 0, 20.48% 0.11%,20.48% 0.23%,20.48% 0.23%,20.48% 0.23%,20.48%
 				background-color: #333
 		.slick-disabled
 			opacity: 0
-			+tr(.4s .4s)
+			+tr(.4s .2s)
+	&-first
+		.startscreen__nav_link
+			border-color: #e3f3f6
+			&:after
+				border-color: #e3f3f6
+	&-last
+		.startscreen__nav_link
+			border-color: #fff
+			&:after
+				border-color: #fff
 
 	&-main
 		position: absolute

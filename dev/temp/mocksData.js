@@ -87,7 +87,7 @@ _template: {
 	main: {
 		item: [
 			{list: [
-				{ link: 'float', name: 'Float'},
+				{ link: 'float', name: 'why Float'},
 				{ link: 'float-service', name: 'Services',
 				submenu: [
 					{
@@ -113,7 +113,7 @@ _template: {
 		inner: 'header-inner',
 		item: [
 			{list: [
-				{ link: 'float', name: 'Float'},
+				{ link: 'float', name: 'why Float'},
 				{ link: 'float-service', name: 'Services',
 				submenu: [
 					{
@@ -139,7 +139,7 @@ _template: {
 		inner: 'header-inner',
 		item: [
 			{list: [
-				{ link: 'float', name: 'Float'},
+				{ link: 'float', name: 'why Float'},
 				{ link: 'float-service', name: 'Services', active: 'is-active',
 				submenu: [
 					{
@@ -191,7 +191,7 @@ _template: {
 		inner: 'header-inner',
 		item: [
 			{list: [
-				{ link: 'float', name: 'float'},
+				{ link: 'float', name: 'why float'},
 				{ link: 'float-service', name: 'Services',
 				submenu: [
 					{
@@ -217,7 +217,7 @@ _template: {
 		inner: 'header-inner',
 		item: [
 			{list: [
-				{ link: 'float', name: 'float'},
+				{ link: 'float', name: 'why float'},
 				{ link: 'float-service', name: 'Services',
 				submenu: [
 					{
